@@ -1,3 +1,39 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// lets try nesting because its extremely cool and i was dying to give it a go.
+
+.header {
+  // general h1 settings
+  text-align: center;
+
+  // nested classes from .header
+  .indexHeader{
+    color: red;
+  }
+
+  .aboutHeader{
+    color: blue;
+  }
+
+  .contactHeader{
+    color: yellow;
+  }
+
+}
+
+// test row
+#testRow{
+
+  min-height: 90vh;
+
+    .box{
+      min-height: 100%!important;
+      background-color: red;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+}

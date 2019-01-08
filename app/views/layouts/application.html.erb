@@ -2,8 +2,14 @@
 <html>
   <head>
     <title>RailsApp01</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,17 +17,58 @@
 
   <body>
 
-    <!-- nav -->
-    <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", simple_pages_about_path %></li>
-        <li><%= link_to "Contact", simple_pages_contact_path %></li>
-      </ul>
-    </nav>
-    <!-- /nav -->
+    <!-- menu area ####### ####### ####### ####### ####### ####### ####### -->
+    <nav id="menu"
+      class="
+          navbar
+          navbar-dark
+          bg-dark
+          navbar-expand-lg
+          smoothClass
+          w-100
+          ">
 
+      <!-- branding -->
+      <a class="navbar-brand" href="/">Ruby Application</a>
+
+      <!-- button to collapse -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navBar"
+        aria-expanded="true"
+        aria-label="Toggle navigation">
+        <!-- inner font awesesome icon -->
+        <i class="fas fa-ellipsis-h"></i>
+      </button>
+
+      <!-- collapsible div -->
+      <div id="navBar" class="collapse navbar-collapse justify-content-end">
+        <!-- items -->
+        <div class="navbar-nav text-right row justify-content-end align-self-end ml-auto">
+
+          <!-- item 1 -->
+          <%= link_to "home", root_path, class: "nav-item nav-link active" %>
+
+          <!-- item 2 -->
+          <%= link_to "about", simple_pages_about_path, class: "nav-item nav-link" %>
+
+          <!-- item 3 -->
+          <%= link_to "contact", simple_pages_contact_path, class: "nav-item nav-link" %>
+
+        </div>
+        <!-- /items -->
+      </div>
+      <!-- /collapsible div -->
+
+    </nav>
+    <!-- /menu area ####### ####### ####### ####### ####### ####### ####### -->
+
+
+    <section class="container-fluid">
     <%= yield %>
+    </section>
 
     <footer>
       &copy; 2018 Gomes
