@@ -6,3 +6,7 @@ For better tutoring all significant changes will be kept under this log.
 - Define navigation on global layout;
 - Style navigation and footer elements;
 - Display responsive images using ruby methods;
+
+## [v0.2] > Handle database environment
+- Enable PostgresSQL for production;
+- Enable Sqlite3 for development;
