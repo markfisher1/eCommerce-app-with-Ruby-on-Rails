@@ -21,15 +21,13 @@
     <nav id="menu"
       class="
           navbar
-          navbar-dark
-          bg-dark
           navbar-expand-lg
           smoothClass
           w-100
           ">
 
       <!-- branding -->
-      <a class="navbar-brand" href="/">Ruby Application</a>
+      <a class="navbar-brand" href="/"><%= image_tag("rails_icon.ico", class: "img-logo align-self-center") %> <span>Ruby Application</span></a>
 
       <!-- button to collapse -->
       <button
@@ -66,12 +64,35 @@
     <!-- /menu area ####### ####### ####### ####### ####### ####### ####### -->
 
 
-    <section class="container-fluid">
+    <section class="container-fluid content">
     <%= yield %>
     </section>
 
     <footer>
-      &copy; 2018 Gomes
+      <div class="row">
+
+        <!-- left col -->
+        <div class="col-6 text-left">
+          &copy;2018 <a href="https://github.com/Alphabetus" target="_blank" alt="Link to my GitHub profile">Alphabetus</a>
+        </div>
+
+        <!-- right col -->
+        <div class="col-6 text-right">
+
+          <a href="https://github.com/Alphabetus" target="_blank" alt="Link to my GitHub profile">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="" target="_blank" alt="Link to my Facebook Page">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <a href="" target="_blank" alt="Email me">
+            <i class="far fa-envelope"></i>
+          </a>
+        </div>
+
+      </div>
     </footer>
   </body>
 </html>
