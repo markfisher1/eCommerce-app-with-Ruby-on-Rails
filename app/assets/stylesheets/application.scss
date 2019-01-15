@@ -14,7 +14,7 @@
  // *= require_self
  */
  // @import 'bootstrap-sprockets';
- // *= require_tree .
+
  @import "bootstrap";
 
 /*  Variables  */
@@ -111,3 +111,6 @@ a:hover , a:active{
   color: $colorLink-light-hover;
   text-decoration: none;
 }
+
+
+// *= require_tree .
