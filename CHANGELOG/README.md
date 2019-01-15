@@ -1,6 +1,12 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.4] > 4.2 > Database Migrations
+- Add migration to insert price field.
+- Add migration to rename colour field to colour.
+- Add seed to populate db.
+- Design basic responsive product display layout.
+
 ## [v0.3] > 4.1 > Scaffolding products
 - Create db table and respective model to handle data.
 - Design the product table list and add product form.

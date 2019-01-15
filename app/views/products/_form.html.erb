@@ -14,39 +14,34 @@
 <div class="row justify-content-center">
 
   <div class="field col-12">
-    <div class="col-6">
-      <%= form.label :name %>
-    </div>
-    <div class="col-6">
-      <%= form.text_field :name %>
-    </div>
+    <%= form.label :name, class: "w-100" %><br>
+    <%= form.text_field :name, class: "w-100" %>
   </div>
 
   <div class="field col-12">
-    <div class="col-6">
-      <%= form.label :description %>
-    </div>
-    <div class="col-6">
-      <%= form.text_area :description %>
-    </div>
+    <%= form.label :description, class: "w-100" %><br>
+    <%= form.text_area :description, class: "w-100" %>
   </div>
 
   <div class="field col-12">
-    <div class="col-6">
-      <%= form.label :image_url %>
-    </div>
-    <div class="col-6">
-      <%= form.text_field :image_url %>
-    </div>
+    <%= form.label :image_url, class: "w-100" %><br>
+    <%= form.text_field :image_url, class: "w-100" %>
   </div>
 
-  <div class="actions col-12">
-    <div class="col-6">
-      <%= form.submit "AddProduct", class: "btn btn-success"%>
-    </div>
-
+  <div class="field col-12">
+    <%= form.label :colour, class: "w-100" %><br>
+    <%= form.text_field :colour, class: "w-100" %>
   </div>
 
+  <div class="field col-12">
+    <%= form.label :price, class: "w-100" %><br>
+    <%= form.text_field :price, class: "w-100" %>
+  </div>
+
+  <div class="actions col-12 pt-2">
+    <%= form.submit "Save Product", class: "btn btn-success"%>
+  </div>
+  <br><br>
 </div>
 
 
