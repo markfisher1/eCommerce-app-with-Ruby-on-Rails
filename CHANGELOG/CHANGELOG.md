@@ -1,7 +1,7 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
-## [v0.3] > Scaffolding products
+## [v0.3] > 4.1 > Scaffolding products
 - Create db table and respective model to handle data.
 - Design the product table list and add product form.
 - Added product dummy listings.
