@@ -1,6 +1,10 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.6.2] > Fix asynchronous loading of product images
+
+- Patch asynchronous script to face production environment.
+
 ## [v0.6.1] > Fix pipeline asset
 
 - Fix javascript syntax to face asset pipeline requirements and avoid errors.
