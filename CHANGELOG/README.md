@@ -1,6 +1,10 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.6.3] > Define default product picture
+
+- Attribute default product picture if none is found in our records.
+
 ## [v0.6.2] > Fix asynchronous loading of product images
 
 - Patch asynchronous script to face production environment.

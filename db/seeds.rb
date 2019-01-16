@@ -26,7 +26,11 @@ productArray = [
   {name: "Dummy 09", description: "Descritption for dummy 09", colour: "black", price: 105.10, image_url: "dummy_09.jpg"},
   {name: "Dummy 10", description: "Descritption for dummy 10", colour: "red", price: 10.00, image_url: "dummy_10.jpg"},
   {name: "Dummy 11", description: "Descritption for dummy 11", colour: "diamond", price: 1750.99, image_url: "dummy_11.jpg"},
-  {name: "Dummy 12", description: "Descritption for dummy 12", colour: "white", price: 350.00, image_url: "dummy_12.jpg"}
+  {name: "Dummy 12", description: "Descritption for dummy 12", colour: "white", price: 350.00, image_url: "dummy_12.jpg"},
+  {name: "Dummy 13", description: "Descritption for dummy 13", colour: "brown", price: 77.10, image_url: "dummy_13.jpg"},
+  {name: "Dummy 14", description: "Descritption for pictureless dummy 14", colour: "orange", price: 200.00},
+  {name: "Dummy 15", description: "Descritption for dummy 15", colour: "silver", price: 699.99, image_url: "dummy_15.jpg"},
+  {name: "Dummy 16", description: "Descritption for dummy 16", colour: "black", price: 76.00, image_url: "dummy_16.jpg"}
 ]
 
 # Lets compare table entries with array entries numbers.

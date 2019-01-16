@@ -3,8 +3,6 @@
 <h1>Product List</h1>
 
 <section class="row" id="product_section">
-<%= content_tag :div, id: "hidden_information_products_array", data: {products_array: @products} do %>
-<% end %>
   <% @products.each do |prod| %>
     <!-- product container -->
     <div class="col-6 col-md-4 col-lg-3 mt-2">
@@ -16,7 +14,7 @@
 
         <div class="card-body row">
           <div class="card-image border rounded">
-            <%= image_tag("load.gif", class: "load_image product_image", data:{type: "product_canvas", product_id: prod.id, product_image: "#{asset_path(prod.image_url)}"}, alt: "#{prod.name} Image") %>
+            <%= image_tag("load.gif", class: "load_image product_image", data:{type: "product_canvas", product_id: prod.id, product_image: "#{asset_path(prod.image_url)}", product_default_image: "#{asset_path("default_product.jpg")}"}, alt: "#{prod.name} Image") %>
             <%= image_tag("load.gif", id: "load_#{prod.id}", class: "loading_gif", data:{type: "loading"}, alt: "#{prod.name} is loading") %>
           </div>
           <div class="col-12 p-0"> <!-- wrapper is here bc i know im gonna need it to style the text better -->

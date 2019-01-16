@@ -10,14 +10,18 @@ $(document).on("turbolinks:load", function(){
   // END OF HOVER HANDLER
 
   // DEAL WITH PRODUCT ARRAY AND POPULATE PRODUCT IMAGES ASYNC.
-  var productArray = $("#hidden_information_products_array").data("products-array");
   var canvasArray = $(".product_image");
-
 
   for (i = 0; i < canvasArray.length; i++){
     $(canvasArray[i]).removeClass("load_image");
     $(canvasArray[i]).addClass("card-img-top");
-    canvasArray[i].src = $(canvasArray[i]).data("product-image");
+    var imageSrc = $(canvasArray[i]).data("product-image");
+
+    // lets check for picture or distribute default avatar for product
+    if (imageSrc.length < 1){
+      imageSrc = $(canvasArray[i]).data("product-default-image");
+    }
+    canvasArray[i].src = imageSrc
     var ele = $(canvasArray[i]);
 
     // console.log(ele);
@@ -27,10 +31,9 @@ $(document).on("turbolinks:load", function(){
       $(this).fadeTo(750, 1, function(){
 
       });
-
-
     })
 
   }
+  // END OF DEAL WITH PRODUCT ARRAY AND POPULATE PRODUCT IMAGES ASYNC.
 
 });
