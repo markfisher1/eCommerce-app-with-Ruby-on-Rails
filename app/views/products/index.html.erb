@@ -3,7 +3,8 @@
 <h1>Product List</h1>
 
 <section class="row" id="product_section">
-
+<%= content_tag :div, id: "hidden_information_products_array", data: {products_array: @products} do %>
+<% end %>
   <% @products.each do |prod| %>
     <!-- product container -->
     <div class="col-6 col-md-4 col-lg-3 mt-2">
@@ -15,7 +16,7 @@
 
         <div class="card-body row">
           <div class="card-image border rounded">
-            <%= image_tag(prod.image_url, class: "card-img-top", alt: "#{prod.name} Image") %>
+            <%= image_tag("load.gif", class: "load_image", data:{type: "product_canvas", product_id: prod.id}, alt: "#{prod.name} Image") %>
           </div>
           <div class="col-12 p-0"> <!-- wrapper is here bc i know im gonna need it to style the text better -->
             <h5 class="text-truncate"><%= prod.name %></h5>

@@ -26,7 +26,7 @@
   overflow: hidden;
 }
 
-.card-img-top{
+.card-img-top, .load_image{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,4 +37,8 @@
   position: relative;
   height: 100%;
   font-size: 0.8em;
+}
+
+.load_image{
+  width: 15%;
 }

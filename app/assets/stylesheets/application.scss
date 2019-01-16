@@ -69,10 +69,9 @@ $indexTop : 100;
 
   // logo handler
   .img-logo{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     height: 1.2em;
+    vertical-align: middle;
+    margin-bottom: 0.2em;
   }
   // brand handler
   .navbar-brand span{

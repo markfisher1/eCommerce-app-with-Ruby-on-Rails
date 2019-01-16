@@ -7,4 +7,22 @@ $(document).ready(function(){
     $(".card-title", this).css("opacity", 0)
   });
   // END OF HOVER HANDLER
+
+  // DEAL WITH PRODUCT ARRAY AND POPULATE PRODUCT IMAGES ASYNC.
+  var productArray = $("#hidden_information_products_array").data("products-array");
+
+  for (i = 0; i < productArray.length; i++){
+    const imageObj = $("img[data-product-id='"+productArray[i].id+"']");
+    const downloadingImage = new Image();
+    downloadingImage.src = "/assets/" + productArray[i].image_url;
+
+    // console.log(image);
+    downloadingImage.onload = function(){
+      imageObj.removeClass("load_image");
+      imageObj.addClass("card-img-top");
+      imageObj[0].src = downloadingImage.src;
+    };
+  };
+  // END OF > DEAL WITH PRODUCT ARRAY AND POPULATE PRODUCT IMAGES ASYNC.
+
 });

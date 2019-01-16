@@ -1,6 +1,17 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.6] > Icon fix, Product image async loading script & orders DB structure
+
+- Fix webApp icon positioning.
+- Add order model.
+- Update product model.
+- Apply DB migration to design the structure for order table.
+- Prepare DB seed to avoid entry duplication on initial dummy content.
+- Add JavaScript asynchronous loading script to product images.
+- Associate Order & Product classes.
+- Update graphical content.
+
 ## [v0.5] > 4.3 > Add manual controller & actions for orders view
 
 - Add controller and actions to handle orders view without using rails generator.
