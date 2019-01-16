@@ -16,7 +16,7 @@
 
         <div class="card-body row">
           <div class="card-image border rounded">
-            <%= image_tag("load.gif", class: "load_image product_image", data:{type: "product_canvas", product_id: prod.id}, alt: "#{prod.name} Image") %>
+            <%= image_tag("load.gif", class: "load_image product_image", data:{type: "product_canvas", product_id: prod.id, product_image: "#{asset_path(prod.image_url)}"}, alt: "#{prod.name} Image") %>
           </div>
           <div class="col-12 p-0"> <!-- wrapper is here bc i know im gonna need it to style the text better -->
             <h5 class="text-truncate"><%= prod.name %></h5>
