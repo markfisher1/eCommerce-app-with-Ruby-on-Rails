@@ -12,8 +12,8 @@ $(document).ready(function(){
   var productArray = $("#hidden_information_products_array").data("products-array");
 
   for (i = 0; i < productArray.length; i++){
-    const imageObj = $("img[data-product-id='"+productArray[i].id+"']");
-    const downloadingImage = new Image();
+    var imageObj = $("img[data-product-id='"+productArray[i].id+"']");
+    var downloadingImage = new Image();
     downloadingImage.src = "/assets/" + productArray[i].image_url;
 
     // console.log(image);
