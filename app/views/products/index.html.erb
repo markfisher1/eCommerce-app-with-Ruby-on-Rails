@@ -4,6 +4,10 @@
 
 <section class="row" id="product_section">
   <% @products.each do |prod| %>
+    <!-- validate image for product otherwise replace nil for '' -->
+    <% if prod.image_url == nil
+      prod.image_url = ""
+      end %>
     <!-- product container -->
     <div class="col-6 col-md-4 col-lg-3 mt-2">
 
