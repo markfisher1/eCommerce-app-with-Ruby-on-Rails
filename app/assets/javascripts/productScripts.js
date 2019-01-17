@@ -36,4 +36,11 @@ $(document).on("turbolinks:load", function(){
   }
   // END OF DEAL WITH PRODUCT ARRAY AND POPULATE PRODUCT IMAGES ASYNC.
 
+  // ADD 2 CART BUTTON
+  $("[data-operation='add2cart']").on("click", function(){
+    var productID = $(this).data("product_id");
+    alert(`Added product ID${productID} to cart.\n\nMy idea is to store product id as "varchar" array on Orders table and proceed from there to a cart system.`);
+  });
+  // END OF ADD 2 CART BUTTON
+
 });

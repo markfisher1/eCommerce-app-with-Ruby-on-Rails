@@ -15,18 +15,16 @@
  // @import 'bootstrap-sprockets';
  // *= require products
 
- @import "bootstrap";
+@import "bootstrap";
+@import "variables";
 
-/*  Variables  */
-$colorLink-light: #E6FDFF;
-$colorLink-light-hover: #B8DDE0;
-$colorBkg-dark: #505963;
-$boxShadow-down-01: 0px 0px 15px rgba(0, 0, 0, 0.8);
-$boxShadow-top-01: 0px 0px 15px rgba(0, 0, 0, 0.8);
-$indexTop : 100;
+body{
+  overflow-x: hidden; 
+}
 
 /*  MENU  */
 #menu{
+  min-height: 8vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -97,7 +95,7 @@ footer{
 
 /*  CONTENT PADDING  */
 .content{
-  padding-top: 10vh;
+  padding-top: 8vh;
   padding-bottom: 10vh;
 }
 

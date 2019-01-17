@@ -4,6 +4,14 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+
+    # sanitise output
+    @products.each.with_index do |prod, index|
+      # image url > if empty > give default
+      if prod.image_url == nil
+        @products[index].image_url = "default_product.jpg"
+      end
+    end
   end
 
   # GET /products/1

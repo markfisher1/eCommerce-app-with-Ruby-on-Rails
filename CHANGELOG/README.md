@@ -1,6 +1,15 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.7] > 4.5 > Add dynamic carousel for latest products & controller patch
+
+- Add dynamic carousel to display the newest items on the shop.
+- Patch simple_pages controller & product controller to sanitise output data to face needs.
+- Migrate css variables to stylesheets/variables.css.
+- Style featured products' carousel.
+- Break views into partial renders for better organisation.
+- Sanitise output from products & simple_pages controllers.
+
 ## [v0.6.4] > Fix product image nil scenarios
 
 - Fix exception where product image data-attribute was nil due to lack of image.
@@ -18,7 +27,7 @@ For better tutoring all significant changes will be kept under this log.
 
 - Fix javascript syntax to face asset pipeline requirements and avoid errors.
 
-## [v0.6] > Icon fix, Product image async loading script & orders DB structure
+## [v0.6] > 4.4 > Icon fix, Product image async loading script & orders DB structure
 
 - Fix webApp icon positioning.
 - Add order model.
