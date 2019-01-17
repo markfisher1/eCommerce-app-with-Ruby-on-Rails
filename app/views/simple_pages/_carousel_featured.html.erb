@@ -1,0 +1,105 @@
+<!-- carousel row -->
+<div id="carousel_featured_container" class="row">
+  <!-- featured carousel -->
+  <div id="carousel_featured" class="carousel slide w-100" data-ride="carousel">
+    <!-- carousel indicators -->
+    <ol class="carousel-indicators">
+      <% @featured_products.each.with_index do |prod, index| %>
+      <% if index == 0
+        isActive = "active"
+        else
+        isActive = ""
+      end %>
+      <li data-target="#carousel_featured" data-slide-to="<%= index %>" class="<%= isActive %>"></li>
+      <% end %>
+    </ol>
+    <!-- /carousel indicators -->
+    <div class="carousel-inner ">
+      <% prodCounter = 0 %>
+      <% @featured_products.each do |prod| %>
+      <% prodCounter += 1
+        if prodCounter == 1
+          isActive = "active"
+        else
+          isActive = ""
+        end
+
+        %>
+        <div class="carousel-item <%= isActive %> col text-center" data-interval="10000">
+          <div class="carousel_image_container">
+            <%= image_tag(
+                  asset_path(prod.image_url),
+                  class: "carousel_image mt-0 mt-sm-1 mt-md-5",
+                  alt: "dummy_01") %>
+          </div>
+          <!-- caption -->
+          <div class="carousel-caption rounded-top">
+
+            <!-- caption header row -->
+            <div class="row caption-header">
+              <!-- title col -->
+              <div class="col-8 caption-header-title">
+                <%= prod.name %>
+              </div>
+              <!-- /title col -->
+              <!-- price col -->
+              <div class="col-4 caption-header-price align-self-center">
+                <span class="dollar">€</span><%= prod.price %>
+              </div>
+              <!-- /price col -->
+            </div>
+            <!-- /caption header row -->
+
+            <!-- caption description row -->
+            <div class="row caption-description">
+              <div class="col-12 align-self-center">
+                <%= prod.description %>
+              </div>
+            </div>
+            <!-- /caption description row -->
+
+            <!-- caption action row -->
+            <div class="row caption-action justify-content-around">
+
+              <!-- view col -->
+              <div class="col-6 align-self-center">
+                <a href="/products/<%= prod.id %>" class="btn btn-outline-light">
+                  <i class="far fa-eye"></i> view
+                </a>
+              </div>
+              <!-- /view col -->
+
+              <!-- add 2 cart col -->
+              <div class="col-6 align-self-center">
+                <a href="#" class="btn btn-outline-light"
+                  data-operation="add2cart"
+                  data-product_id="<%= prod.id %>">
+                  <i class="fas fa-cart-plus"></i> add
+                </a>
+              </div>
+              <!-- /add 2 cart col -->
+
+            </div>
+            <!-- /caption action row -->
+
+          </div>
+          <!-- /caption -->
+        </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev carousel-control" href="#carousel_featured" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true">
+        <i class="fas fa-chevron-left"></i>
+      </span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next carousel-control" href="#carousel_featured" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true">
+        <i class="fas fa-chevron-right"></i>
+      </span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!-- /featured carousel -->
+</div>
+<!-- /carousel row -->
