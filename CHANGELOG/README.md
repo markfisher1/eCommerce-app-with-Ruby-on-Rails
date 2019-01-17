@@ -3,6 +3,8 @@ For better tutoring all significant changes will be kept under this log.
 
 ## [v0.7] > 4.5 > Add dynamic carousel for latest products & controller patch
 
+### [v0.7.2] > Fix javascript concatenation II > Heroku fail to compile
+
 ### [v0.7.1] > Fix javascript concatenation & delete trash file
 
 ### [v0.7]

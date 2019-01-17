@@ -39,7 +39,7 @@ $(document).on("turbolinks:load", function(){
   // ADD 2 CART BUTTON
   $("[data-operation='add2cart']").on("click", function(){
     var productID = $(this).data("product_id");
-    alert("Added product "+ productID +" to cart.\n\nMy idea is to store product id as "varchar" array on Orders table and proceed from there to a cart system.");
+    alert("Added product "+ productID +" to cart.\n\nMy idea is to store product id as 'varchar' array on Orders table and proceed from there to a cart system.");
   });
   // END OF ADD 2 CART BUTTON
 
