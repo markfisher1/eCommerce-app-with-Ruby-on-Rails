@@ -3,6 +3,9 @@ For better tutoring all significant changes will be kept under this log.
 
 ## [v0.7] > 4.5 > Add dynamic carousel for latest products & controller patch
 
+### [v0.7.1] > Fix javascript concatenation & delete trash file
+
+### [v0.7]
 - Add dynamic carousel to display the newest items on the shop.
 - Patch simple_pages controller & product controller to sanitise output data to face needs.
 - Migrate css variables to stylesheets/variables.css.
