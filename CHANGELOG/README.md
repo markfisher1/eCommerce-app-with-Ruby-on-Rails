@@ -1,6 +1,11 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.9] > Carousel dynamic sizing & Controls 
+
+- Format carousel caption content according to different screen sizes.
+- Remove scale effect from carousel controls on small screens.
+
 ## [v0.8] > Carousel styling & Control on swipe
 
 - Position text to the right on carousel's price tag.

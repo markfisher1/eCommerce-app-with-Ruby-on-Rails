@@ -4,7 +4,8 @@
 @import "variables";
 // CAROUSEL FEATURED
 #carousel_featured_container{
-  height: 90vh;
+  height: 80vh;
+  @media (min-width: 550px){height: 90vh;}
 }
 
 .carousel-inner{
@@ -38,13 +39,16 @@
   color: $colorLink-light;
   text-align: left;
   bottom: 0.51vh;
-  // debug
-  *{border: 1px red solid;}
   // fix inner rows margin
   .row {margin: 0 auto;}
   // title handler
   .caption-header-title , .caption-header-price{
-    font-size: 1.5em;
+    font-size: 0.75em;
+    // re-size text on diff breakpoints
+    @media (min-width: 550px){
+      font-size: 1.2em;
+    }
+
     background-color: rgba(255,255,255, 0.3);
   }
 
@@ -53,6 +57,8 @@
     margin-top: 0.15em;
     background-color: rgba(255,255,255, 0.3);
     min-height: 3em;
+    font-size: 0.6em;
+    @media (min-width: 550px){font-size: 0.8em;}
   }
   // dollar sign handler
   .dollar{
@@ -64,6 +70,10 @@
     min-height: 3em;
     // button shape handler
     .btn{
+      font-size: 0.7em;
+      @media (min-width: 550px){
+        font-size: 1em;
+      }
       padding: 0.1em 0.5em;
       word-break: keep-all;
     }
@@ -98,7 +108,11 @@
 .carousel-control:hover{
   // color: $colorBkg-transp!important
   opacity: 0.3!important;
-  i {transform: scale(2, 3.5);}
+  // media query for fx > void small devices scale animation
+  @media (min-width: 550px){
+    i {transform: scale(2, 3.5);}
+  }
+
 }
 
 .carousel-control-next-icon, .carousel-control-prev-icon{
