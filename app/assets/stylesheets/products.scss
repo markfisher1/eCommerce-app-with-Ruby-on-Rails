@@ -4,20 +4,21 @@
 @import "variables";
 // CAROUSEL FEATURED
 #carousel_featured_container{
-  height: 80vh;
-  @media (min-width: 550px){height: 90vh;}
+  height: $carousel-height_bp_01;
+  @media (min-width: $mediaBreak01){height: $carousel-height_bp_02;}
 }
 
 .carousel-inner{
-  height: 90vh;
+  height: $carousel-height_bp_01;
+  @media (min-width: $mediaBreak01){height: $carousel-height_bp_02;}
   width: 100vw;
 }
 
 .carousel_image_container{
   overflow: hidden;
   width: 100vw;
-  height: 80vh;
-  @media (min-width: 550px){height: 90vh;}
+  height: $carousel-height_bp_01;
+  @media (min-width: $mediaBreak01){height: $carousel-height_bp_02;}
   margin-left: -15px;
 }
 
@@ -27,8 +28,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 100vw;
-  max-height: 80vh;
-  @media (min-width: 550px){height: 90vh;}
+  max-height: $carousel-height_bp_01;
+  @media (min-width: $mediaBreak01){height: $carousel-height_bp_02;}
   min-width: 50vw;
   padding: 8vh;
 }
@@ -45,9 +46,9 @@
   .row {margin: 0 auto;}
   // title handler
   .caption-header-title , .caption-header-price{
-    font-size: 0.75em;
+    font-size: 0.7em;
     // re-size text on diff breakpoints
-    @media (min-width: 550px){
+    @media (min-width: $mediaBreak01){
       font-size: 1.2em;
     }
 
@@ -60,7 +61,7 @@
     background-color: rgba(255,255,255, 0.3);
     min-height: 3em;
     font-size: 0.6em;
-    @media (min-width: 550px){font-size: 0.8em;}
+    @media (min-width: $mediaBreak01){font-size: 0.8em;}
   }
   // dollar sign handler
   .dollar{
@@ -73,7 +74,7 @@
     // button shape handler
     .btn{
       font-size: 0.7em;
-      @media (min-width: 550px){
+      @media (min-width: $mediaBreak01){
         font-size: 1em;
       }
       padding: 0.1em 0.5em;
@@ -111,7 +112,7 @@
   // color: $colorBkg-transp!important
   opacity: 0.3!important;
   // media query for fx > void small devices scale animation
-  @media (min-width: 550px){
+  @media (min-width: $mediaBreak01){
     i {transform: scale(2, 3.5);}
   }
 
