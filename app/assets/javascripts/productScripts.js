@@ -43,4 +43,18 @@ $(document).on("turbolinks:load", function(){
   });
   // END OF ADD 2 CART BUTTON
 
+  // CONTROL CAROUSEL ON SWIPE
+  $("#carousel_featured").swipe({
+    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+
+    if (direction == 'left') $(this).carousel('next');
+    if (direction == 'right') $(this).carousel('prev');
+
+    },
+  allowPageScroll:"vertical"
+
+  });
+  // END OF CONTROL CAROUSEL ON SWIPE
+
+
 });

@@ -1,6 +1,12 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.8] > Carousel styling & Control on swipe
+
+- Position text to the right on carousel's price tag.
+- Add swipe left / right as carousel control.
+- Integrate plugin jQuery touchSwipe.
+
 ## [v0.7] > 4.5 > Add dynamic carousel for latest products & controller patch
 
 ### [v0.7.2] > Fix javascript concatenation II > Heroku fail to compile

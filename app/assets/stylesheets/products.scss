@@ -38,6 +38,8 @@
   color: $colorLink-light;
   text-align: left;
   bottom: 0.51vh;
+  // debug
+  *{border: 1px red solid;}
   // fix inner rows margin
   .row {margin: 0 auto;}
   // title handler
@@ -45,6 +47,7 @@
     font-size: 1.5em;
     background-color: rgba(255,255,255, 0.3);
   }
+
   // description handler
   .caption-description{
     margin-top: 0.15em;
