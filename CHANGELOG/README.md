@@ -1,8 +1,11 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
-## [v0.9] > Carousel dynamic sizing & Controls 
+## [v0.9] > Carousel dynamic sizing & Controls
 
+### [v0.9.2] > Fix carousel height on small devices
+
+### [v0.9.1]
 - Format carousel caption content according to different screen sizes.
 - Remove scale effect from carousel controls on small screens.
 
@@ -18,7 +21,7 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.7.1] > Fix javascript concatenation & delete trash file
 
-### [v0.7]
+### [v0.7.0]
 - Add dynamic carousel to display the newest items on the shop.
 - Patch simple_pages controller & product controller to sanitise output data to face needs.
 - Migrate css variables to stylesheets/variables.css.
