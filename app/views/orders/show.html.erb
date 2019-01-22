@@ -1,5 +1,60 @@
-<h2>Orders - Show</h2>
+<h2 class="pt-3">Orders - Show</h2>
+<%
+  # sanitise image URL
+  if @order.product.image_url == nil
+    pImage = "default_product.jpg"
+  else
+    pImage = @order.product.image_url
+  end
 
-<p>This is the Orders - Show.</p>
+  # santitise paid icon
+  if @order.paid == 1
+    paidIcon = "check"
+    paidColor = "success"
+  else
+    paidIcon = "times"
+    paidColor = "danger"
+  end
 
-<%= link_to "orders", orders_path, class: "btn btn-outline-primary" %>
+  # sanitise delivered icon
+  if @order.status == 1
+    deliveredIcon = "fas fa-shipping-fast"
+    deliveredColor = "success"
+  else
+    deliveredIcon = "far fa-clock"
+    deliveredColor = "danger"
+  end
+%>
+<p>Isolated view per order.</p>
+
+<div id="order_details" class="row">
+  <div class="col-12 header p-0 p-md-3">
+    <h3><%= @order.product.name %></h3>
+  </div>
+
+  <div class="col-12 order_timestamp px-0 px-md-3">
+    <i>Last Update >> <%= @order.product.updated_at %></i>
+  </div>
+
+  <div class="col-4 align-self-center px-0 px-md-3">
+    <%= image_tag(pImage, class: "image_order") %>
+  </div>
+
+  <div class="col-8 align-self-center text-left px-0 px-md-3">
+    <p>
+      <strong>Last Upddate: </strong> <%= @order.updated_at %><br>
+      <strong>Customer: </strong> <%= @order.user_id %><br>
+      <strong>Value: </strong> €<%= @order.total %><br>
+      <strong>Paid: </strong> <i class="fas fa-<%= paidIcon %> text-<%= paidColor %>"></i><br>
+      <strong>Delivered: </strong> <i class="<%= deliveredIcon %> text-<%= deliveredColor %>"></i>
+    </p>
+    <p>
+      <strong>Product Description:</strong><br>
+      <%= @order.product.description %>
+    </p>
+  </div>
+
+  <div class="col-12 mt-3 px-0 px-md-3">
+    <%= link_to "back to orders", orders_path, class: "btn btn-outline-primary mt-1" %>
+  </div>
+</div>

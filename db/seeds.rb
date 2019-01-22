@@ -46,3 +46,33 @@ if Product.count < productArray.count
   # Lets run the seeding on the remaining / unedited array deppending on the scenario
   Product.create(productArray)
 end
+
+
+# SEED FOR DUMMY ORDERS
+# POPULATE ONLY IF NOT THERE.
+# NOTE: This works based on array index order!!
+# =>    It will count the Dummy products on the DB and create 2 dummy orders for each product.
+# =>    Script will simulate if order is paid or not based on randomness. Just to test output display.
+
+if Order.count < (Product.count * 2)
+orderArray = []
+  Product.all.each.with_index do |prod, index| #loop Proucts and create orders.
+    productID = index - 1
+    2.times do
+      isPaidOption = [0, 1]
+      isPaid = isPaidOption.sample
+      if isPaid == 1 # simulate delivered within paid items
+        statusOption = [0, 1].sample
+      else
+        statusOption = 0
+      end
+      singleOrderArray = [{user_id: 1, product_id: productID, total: prod.price, paid: isPaid, status: statusOption}]
+      orderArray << singleOrderArray
+    end
+
+  end
+
+# place orderArray on order table.
+Order.create(orderArray)
+
+end

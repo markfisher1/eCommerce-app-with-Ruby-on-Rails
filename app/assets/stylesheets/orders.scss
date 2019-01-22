@@ -1,0 +1,50 @@
+
+#order_details{
+margin-bottom: 3vh;
+
+  // header handling
+  .header{
+    
+  }
+  // handle timestamp
+  .order_timestamp{
+    font-size: 0.6em;
+  }
+  // image handling
+  .image_order{
+    width: 100%;
+  }
+}
+
+#orders{
+
+
+  // row order handler
+  .order_list_row{
+    height: 20vh;
+    // query for div height
+    @media (min-width: 550px){
+      height: 30vh;
+    }
+    font-size: 0.7em;
+    // query for font-size
+    @media (min-width: 550px){
+      font-size: 0.9em;
+    }
+  }
+
+  // order list image handler
+  .image_order_list_container{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .image_order_list{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 100%;
+    transform: translate(-50%, -50%);
+  }
+}

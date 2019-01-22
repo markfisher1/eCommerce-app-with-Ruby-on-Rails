@@ -1,9 +1,15 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.10] > 4.6 > Order Controller and Views
+
+- Add views for orders index and show pages.
+- Make referred output responsive.
+- Patch `seed.rb` to face dummy orders by default.
+
 ## [v0.9] > Carousel dynamic sizing & Controls
 
-### [v0.9.3] > Code cleanup with variables at products.scss 
+### [v0.9.3] > Code cleanup with variables at products.scss
 
 ### [v0.9.2] > Fix carousel height on small devices
 
