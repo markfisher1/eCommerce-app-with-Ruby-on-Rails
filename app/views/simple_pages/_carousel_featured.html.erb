@@ -27,10 +27,12 @@
         %>
         <div class="carousel-item <%= isActive %> col text-center" data-interval="10000">
           <div class="carousel_image_container">
-            <%= image_tag(
+            <a href="<%= "#{products_path}/#{prod.id}" %>">
+              <%= image_tag(
                   asset_path(prod.image_url),
                   class: "carousel_image mt-0 mt-sm-1 mt-md-5",
                   alt: "dummy_01") %>
+            </a>
           </div>
           <!-- caption -->
           <div class="carousel-caption rounded-top">

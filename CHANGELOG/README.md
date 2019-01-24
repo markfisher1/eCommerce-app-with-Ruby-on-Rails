@@ -1,6 +1,12 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.11] > 4.7 > Responsive layout for products, patch controllers & linking
+
+- Add responsive view for single products.
+- Patch product controller to sanitise output.
+- Add direct linking for singular product page through carousel images & product table images.
+
 ## [v0.10] > 4.6 > Order Controller and Views
 
 - Add views for orders index and show pages.

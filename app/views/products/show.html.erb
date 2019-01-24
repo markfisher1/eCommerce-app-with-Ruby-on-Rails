@@ -1,34 +1,94 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>ID:</strong>
-  <%= @product.id %>
-</p>
+<div id="product_single" class="row justify-content-around">
+  <!-- col for info -->
+  <div class="col-12 col-md-8">
+    <div class="row">
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+      <div class="col-12 product_single_view border rounded">
+        <!-- this is the product overview section -->
+        <!-- header -->
+        <div class="row">
+          <div class="col-12">
+            <h2>
+              <%= @product.name.capitalize %>
+              <span class="product_reference">
+                (ref.: <%= @product.id %>)
+              </span>
+            </h2>
+          </div>
+          <div class="col-12">
+            <hr>
+          </div>
+        </div>
+        <!-- /header -->
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+        <!-- grid 2 slots > image & specifics -->
+        <div class="row justify-content-around">
 
-<p>
-  <strong>Color:</strong>
-  <%= @product.colour %>
-</p>
+          <div class="col-12 col-md-6">
+            <div class="product_image_container border rounded">
+              <%= image_tag(@product.image_url, class: "product_single_image", alt: @product.name) %>
+            </div>
+          </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+          <div class="col-12 col-md-6">
+            <div class="row product_specifics">
+              <div class="wrapper col-12 align-self-center">
+                <strong>Description:</strong><br>
+                <%= @product.description.capitalize %><br>
+                <br>
+                <strong>Color:</strong>
+                <%= @product.colour.capitalize %><br>
+                <br>
+                <strong>Price:</strong> 
+                <span class="dollar">€</span><%= @product.price %><br>
+              </div>
+            </div>
+          </div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+        </div>
+        <!-- /grid 2 slots > image & specifics -->
 
-<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-warning" %> |
-<%= link_to 'Back', products_path, class: "btn btn-primary" %>
+        <!-- /this is the product overview section -->
+      </div>
+
+    </div>
+  </div>
+  <!-- /col for info -->
+
+  <!-- col for actions -->
+  <div class="col-12 col-md-4 mt-2 mt-md-0">
+    <div class="row justify-content-center">
+
+      <div class="col-12 product_single_action border rounded">
+        <!-- header actions -->
+        <div class="row">
+          <div class="col-12">
+            <h2>Actions</h2>
+          </div>
+          <div class="col-12">
+            <hr>
+          </div>
+        </div>
+        <!-- /header actions -->
+
+        <!-- action buttons -->
+        <div class="row justify-content-center">
+          <div class="col-6 text-center mb-2">
+            <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-warning" %>
+          </div>
+
+          <div class="col-6 text-center mb-2">
+            <%= link_to 'Back', products_path, class: "btn btn-primary" %>
+          </div>
+        </div>
+        <!-- /action buttons -->
+
+
+      </div>
+
+    </div>
+  </div>
+  <!-- /col for actions -->
+</div>
