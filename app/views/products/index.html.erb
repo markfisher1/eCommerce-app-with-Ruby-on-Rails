@@ -1,8 +1,15 @@
-<p id="notice"><%= notice %></p>
+<%= render "carousel_featured" %>
 
-<h1>Products List</h1>
+<div class="row m-0 p-0 mt-5">
+  <div class="col-12 m-0 p-0">
+    <h1>Products List</h1>
+  </div>
+  <div class="col-12 m-0 p-0">
+    <p id="notice"><%= notice %></p>
+  </div>
+</div>
 
-<section class="row" id="product_section">
+<section class="row mt-2" id="product_section">
   <%= render @products %>
 </section>
 

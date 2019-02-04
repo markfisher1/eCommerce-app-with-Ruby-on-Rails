@@ -1,6 +1,11 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.12 - 04/feb/19] > 5.1 > Reroute & Redirect
+
+- Switch root from webApp for products view.
+- Change redirect path on products successful actions.
+
 ## [v0.11] > Optimisation and code cleanup
 
 - Move `JS` external libraries to `vendor/assets/javascripts`.
