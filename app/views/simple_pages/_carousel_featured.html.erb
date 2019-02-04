@@ -5,27 +5,13 @@
     <!-- carousel indicators -->
     <ol class="carousel-indicators">
       <% @featured_products.each.with_index do |prod, index| %>
-      <% if index == 0
-        isActive = "active"
-        else
-        isActive = ""
-      end %>
-      <li data-target="#carousel_featured" data-slide-to="<%= index %>" class="<%= isActive %>"></li>
+        <li data-target="#carousel_featured" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : ''; %>"></li>
       <% end %>
     </ol>
     <!-- /carousel indicators -->
     <div class="carousel-inner ">
-      <% prodCounter = 0 %>
-      <% @featured_products.each do |prod| %>
-      <% prodCounter += 1
-        if prodCounter == 1
-          isActive = "active"
-        else
-          isActive = ""
-        end
-
-        %>
-        <div class="carousel-item <%= isActive %> col text-center" data-interval="10000">
+      <% @featured_products.each.with_index do |prod, index| %>
+        <div class="carousel-item <%= index == 0 ? 'active' : ''; %> col text-center" data-interval="10000">
           <div class="carousel_image_container">
             <a href="<%= "#{products_path}/#{prod.id}" %>">
               <%= image_tag(

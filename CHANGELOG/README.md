@@ -1,6 +1,17 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.11] > Optimisation and code cleanup
+
+- Move `JS` external libraries to `vendor/assets/javascripts`.
+- Cleanup `application.scss`.
+- Patch data display format with callbacks and remove redundant code.
+- Add helper to handle `Orders` status icons.
+- Use `routes.rb` established paths on `orders index` to avoid location errors.
+- Patch `routes.rb` to remove unused call for `orders/#show`.
+- Rename and patch `_products_display` to `_product` and use rails association to fetch `Product` controller.
+- Patch landing page to reduce needed logic into minimalistic readable entries.
+
 ## [v0.11] > 4.7 > Responsive layout for products, patch controllers & linking
 
 - Add responsive view for single products.

@@ -1,0 +1,95 @@
+
+
+
+body{
+  overflow-x: hidden;
+}
+
+/*  MENU  */
+#menu{
+  min-height: 8vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $colorBkg-dark;
+  box-shadow: $boxShadow-down-01;
+  z-index: $indexTop;
+  // nav items
+  .navbar-nav{
+    padding-right: 2vw;
+  }
+  // button
+  button{
+    color: $colorLink-light;
+  }
+  button:hover{
+    color: $colorLink-light-hover;
+  }
+  // links
+  a{
+    text-transform: uppercase;
+  }
+  a:hover{
+    color: $colorLink-light-hover;
+  }
+  a:active{
+    color: $colorLink-light-hover;
+  }
+
+  // collapsed
+  .show > .navbar-nav{
+    padding-right: 3.5vw;
+    // fx //
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+  }
+  .show{
+    padding-bottom: 1vh;
+  }
+
+  // logo handler
+  .img-logo{
+    height: 1.2em;
+    vertical-align: middle;
+    margin-bottom: 0.2em;
+  }
+  // brand handler
+  .navbar-brand span{
+    margin-left: 1.5em;
+  }
+}
+
+/* FOOTER */
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: $indexTop;
+  background-color: $colorBkg-dark;
+  box-shadow: $boxShadow-top-01;
+  font-size: 0.75em;
+  color: $colorLink-light;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+/*  CONTENT PADDING  */
+.content{
+  padding-top: 8vh;
+  padding-bottom: 10vh;
+}
+
+/* LINKS */
+a{
+  color: $colorLink-light;
+  // fx //
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+a:hover , a:active{
+  color: $colorLink-light-hover;
+  text-decoration: none;
+}

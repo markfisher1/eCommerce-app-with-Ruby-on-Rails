@@ -7,37 +7,11 @@
   <div class="col-12 col-lg-10 px-0 px-md-3">
 
     <% @orders.all.each do |order| %>
-    <%
-      # sanitise image URL
-      if order.product.image_url == nil
-        pImage = "default_product.jpg"
-      else
-        pImage = order.product.image_url
-      end
-
-      # santitise paid icon
-      if order.paid == 1
-        paidIcon = "check"
-        paidColor = "success"
-      else
-        paidIcon = "times"
-        paidColor = "danger"
-      end
-
-      # sanitise delivered icon
-      if order.status == 1
-        deliveredIcon = "fas fa-shipping-fast"
-        deliveredColor = "success"
-      else
-        deliveredIcon = "far fa-clock"
-        deliveredColor = "danger"
-      end
-    %>
       <div class="row order_list_row mt-2 mx-0 border rounded">
         <div class="col-4 h-100">
           <div class="image_order_list_container border rounded">
             <%=
-              link_to(image_tag(pImage, class: "img-fluid image_order_list"), "#{orders_path}/#{order.id}",)
+              link_to(image_tag(order.product.image_url, class: "img-fluid image_order_list"), order_path(order.id))
             %>
 
           </div>
@@ -49,8 +23,8 @@
               <strong>Last Upddate: </strong> <%= order.updated_at %><br>
               <strong>Customer: </strong> <%= order.user_id %><br>
               <strong>Value: </strong> €<%= order.total %><br>
-              <strong>Paid: </strong> <i class="fas fa-<%= paidIcon %> text-<%= paidColor %>"></i><br>
-              <strong>Delivered: </strong> <i class="<%= deliveredIcon %> text-<%= deliveredColor %>"></i><br>
+              <strong>Paid: </strong> <%= order_paid_icon(order) %> <br>
+              <strong>Delivered: </strong> <%= order_status_icon(order) %> <br>
             </div>
           </div>
         </div>

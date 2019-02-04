@@ -1,22 +1,3 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.header {
-  // general h1 settings
-  text-align: center;
-
-  // nested classes from .header
-  .indexHeader{
-    color: red;
-  }
-
-  .aboutHeader{
-    color: blue;
-  }
-
-  .contactHeader{
-    color: yellow;
-  }
-
-}

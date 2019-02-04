@@ -4,33 +4,12 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
-
-    # sanitise output
-    @products.each.with_index do |prod, index|
-      # image url > if empty > give default
-      if prod.image_url == nil
-        @products[index].image_url = "default_product.jpg"
-      end
-    end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    #sanitise image url
-    if @product.image_url == nil
-      @product.image_url = "default_product.jpg"
-    end
 
-    #sanitise description
-    if @product.description == nil
-      @product.description = "N/A"
-    end
-
-    #sanitise colour
-    if @product.colour == nil
-      @product.colour = "N/A"
-    end
   end
 
   # GET /products/new
