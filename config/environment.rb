@@ -6,7 +6,7 @@ Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
   address: 'mail.privateemail.com',
-  port: '587',
+  port: '465',
   authentication: :plain,
   user_name: ENV['EMAIL_USERNAME'],
   password: ENV['EMAIL_PASSWORD'],
