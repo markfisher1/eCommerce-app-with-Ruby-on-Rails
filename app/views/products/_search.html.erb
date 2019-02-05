@@ -1,0 +1,11 @@
+<%= form_with(id: "search-form", url: products_path(:anchor => "search-form"), method: "get", local: true, class: "w-50") do |form| %>
+  <div class="input-group">
+    <%= form.text_field :q, id: "q", value: params[:q], class: "form-control text-right", placeholder: 'search for' %>
+    <div class="input-group-append">
+      <%= form.button "<i class='fas fa-search'></i>".html_safe, class: "btn btn-outline-secondary" %>
+    </div>
+
+  </div>
+
+
+<%end %>

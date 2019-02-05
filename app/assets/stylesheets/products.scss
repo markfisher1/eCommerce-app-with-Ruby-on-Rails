@@ -90,11 +90,16 @@
 .carousel-control{
   i{transition: $transition_fast; -webkit-transition: $transition_fast;}
   width: 10vw;
+  padding-top: 10vh;
   transform: scale(1, 2.3);
   color: $colorBkg-dark!important;
   transition: $transition_fadeColor;
   -webkit-transition: $transition_fadeColor;
+}
 
+.carousel-control-prev, .carousel-control-next{
+  bottom: auto;
+  height: 54vh;
 }
 
 .carousel-indicators{
@@ -124,6 +129,8 @@
   background-image: url();
 }
 // END OF CAROUSEL FEATURED
+
+.form-control::-webkit-input-placeholder { text-align:right; }
 
 .product_list{
   position: relative;

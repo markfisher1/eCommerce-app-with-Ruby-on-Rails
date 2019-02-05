@@ -1,6 +1,13 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.13 - 05/feb/19] > 5.2 > Search form, GET requests & Carousel small fix
+
+- Add search box to locate similar entries.
+- Style search box with bootstrap classes.
+- Redirect to product list row anchor when submitting search.
+- Fix carousel controls height to avoid overlap over divs below.
+
 ## [v0.12 - 04/feb/19] > 5.1 > Reroute & Redirect
 
 - Switch root from webApp for products view.
