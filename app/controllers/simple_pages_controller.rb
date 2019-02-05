@@ -4,7 +4,7 @@ class SimplePagesController < ApplicationController
 
   def thank_you
 
-    @name = params[:mame]
+    @name = params[:name]
     @email = params[:email]
     @message = params[:message]
 
