@@ -1,6 +1,12 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.14 - 05/feb/19] > 5.3 > Mailers
+
+- Add responsive contact form.
+- Add `ActionMailer` to handle email delivery.
+- Add simple email template.
+
 ## [v0.13 - 05/feb/19] > 5.2 > Search form, GET requests & Carousel small fix
 
 - Add search box to locate similar entries.

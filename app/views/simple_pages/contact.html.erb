@@ -1,5 +1,54 @@
-<div class="header">
-  <h1 class="contactHeader">Contact</h1>
+<!-- header -->
+<div class="row m-0 p-0 pt-3 header">
+  <div class="col-12 m-0 p-0">
+    <h1 class="contactHeader">Contact</h1>
+  </div>
 </div>
+<!-- /header -->
 
-<p>You can contact me by sending an owl.</p>
+<!-- notice -->
+<div class="row m-0 p-0">
+  <div class="col m-0 p-0">
+    <%= flash[:notice] %>
+  </div>
+</div>
+<!-- /notice -->
+
+<!-- contact form row -->
+<div class="row m-0 p-0 contact-form-container">
+  <div class="col m-0 p-0">
+
+    <%= form_with(url: "/simple_pages/thank_you", method: "post", local: true, class: "w-100 p-1 p-md-5") do |form| %>
+      <!-- <div class="row m-0 p-0"> -->
+
+        <!-- name group -->
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Your name", required: true %>
+        </div>
+        <!-- /name group -->
+
+        <!-- email group -->
+        <div class="form-group">
+          <%= form.label :email %>
+          <%= form.email_field :email, class: "form-control", placeholder: "Your email", required: true %>
+        </div>
+        <!-- /email group -->
+
+        <!-- msg group -->
+        <div class="form-group">
+          <%= form.label :message %>
+          <%= form.text_area :message, class: "form-control", placeholder: "Your message", rows: 4, required: true %>
+        </div>
+        <!-- /msg group -->
+
+        <!-- submit button -->
+        <%= form.button "<i class='far fa-envelope'></i> send".html_safe, class: "btn btn-outline-secondary" %>
+        <!-- /submit button -->
+
+      <!-- </div> -->
+    <% end %>
+
+  </div>
+</div>
+<!-- /contact form row -->
