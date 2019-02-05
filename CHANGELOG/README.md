@@ -1,6 +1,10 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.15 - 05/feb/19] > Mailer switch to private domain 
+
+- Patch environment to use private domain as email server instead of sendgrid plugin.
+
 ## [v0.14 - 05/feb/19] > 5.3 > Mailers
 
 - Add responsive contact form.
