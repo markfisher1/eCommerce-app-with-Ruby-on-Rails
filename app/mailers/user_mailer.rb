@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
     @message = message
     @name = name
     @email = email
-    mail(from: email, to: "contact@followarmy.com", subject: "New message from: #{name}")
+    mail(from: "contact@followarmy.com", to: "contact@followarmy.com", subject: "New message from: #{@name}")
   end
 
 end
