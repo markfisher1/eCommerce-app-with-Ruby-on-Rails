@@ -58,6 +58,29 @@
           <!-- item 3 -->
           <%= link_to "contact", simple_pages_contact_path, class: "nav-item nav-link" %>
 
+
+          <% if user_signed_in? %>
+            <!-- user drop menu -->
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">account</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-divider d-block d-md-none w-50 ml-auto">
+                </div>
+                <%= link_to "settings&nbsp;<i class='fas fa-cogs'></i>".html_safe, edit_user_registration_path, class: "dropdown-item" %>
+                <%= link_to "logout&nbsp;<i class='fas fa-sign-out-alt'></i>".html_safe, destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </div>
+            <!-- end of user drop menu -->
+
+          <% else %> <!-- user is not logged in -->
+            <!-- login -->
+            <%= link_to "login", new_user_session_path, class: "nav-item nav-link" %>
+
+            <!-- create account -->
+            <%= link_to "register", new_user_registration_path, class: "nav-item nav-link" %>
+
+          <% end %>
+
         </div>
         <!-- /items -->
       </div>
@@ -68,6 +91,18 @@
 
 
     <section class="container-fluid content">
+
+      <!-- global flash notice -->
+      <div class="row m-0 p-0 justify-content-center notice-box w-100">
+
+        <div class="col-12 text-secondary notice-box-text">
+          <%= flash[:notice] %>
+        </div>
+
+
+      </div>
+      <!-- /global flash notice -->
+
     <%= yield %>
     </section>
 

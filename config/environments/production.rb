@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  # remove annoying .field_with_errors from my HTML markup!!!!!!
+  ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+    html_tag.html_safe
+  end
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -91,4 +94,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # define production host to ensure correct linking.
+  config.action_mailer.default_url_options = { host: 'https://railsapp01.herokuapp.com/' }
 end

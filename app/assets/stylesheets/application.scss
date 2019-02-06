@@ -14,8 +14,12 @@
  */
 
 @import "variables";
+@import "typography";
 @import "bootstrap";
-@import "*";
+@import "layout";
+@import "products";
+@import "simple_pages";
+@import "users";
 
 
 // *= require_tree .

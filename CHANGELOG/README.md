@@ -1,7 +1,17 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
-## [v0.15 - 05/feb/19] > Mailer switch to private domain 
+## [v0.16 - 06/feb/19] > 5.4 > User authentication & account managing view styling
+
+- Install gem `devise`.
+- Add `devise` views and style them with responsive layout.
+- Patch `environment` configuration to style default rails DOM interactions for error display.
+- Patch `routes` to enable new get and post requests related with account creation and managing.
+- Create `typography` stylesheet file to prepare a common place to group all font interactions.
+- Patch `orders` controller to require user authentication before any action.
+- Enable user registration and login system.
+
+## [v0.15 - 05/feb/19] > Mailer switch to private domain
 
 - Patch environment to use private domain as email server instead of sendgrid plugin.
 
