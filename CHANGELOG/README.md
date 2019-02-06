@@ -1,6 +1,8 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.16 - 06/feb/19] > Fix login error message display
+
 ## [v0.16 - 06/feb/19] > 5.4 > User authentication & account managing view styling
 
 - Install gem `devise`.

@@ -43,8 +43,8 @@
 
           <!-- error display -->
           <div class="row m-0 p-0">
-            <div class="col-12 m-0 p-0 text-center error-display">
-              <%= devise_error_messages! %>
+            <div class="col-12 m-0 p-0 text-danger text-center error-display">
+              <%= flash[:alert] %>
             </div>
           </div>
 
