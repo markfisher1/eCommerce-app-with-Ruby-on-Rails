@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<div id="product_single" class="row justify-content-around">
+<div id="product_single" class="row justify-content-around pt-5">
   <!-- col for info -->
   <div class="col-12 col-md-8">
     <div class="row">
@@ -41,7 +39,7 @@
                 <strong>Color:</strong>
                 <%= @product.colour.capitalize %><br>
                 <br>
-                <strong>Price:</strong> 
+                <strong>Price:</strong>
                 <span class="dollar">€</span><%= @product.price %><br>
               </div>
             </div>
@@ -75,12 +73,20 @@
 
         <!-- action buttons -->
         <div class="row justify-content-center">
-          <div class="col-6 text-center mb-2">
+
+          <!-- lets validate user ability to manage products -->
+          <% if can? :manage , Product %>
+          <div class="col-12 text-center mb-2">
             <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-warning" %>
           </div>
+          <% end %>
 
           <div class="col-6 text-center mb-2">
-            <%= link_to 'Back', products_path, class: "btn btn-primary" %>
+            <%= form_for(:order, url: orders_create_path, method: :post) do |f| %>
+              <%= f.hidden_field(:product_id, :value => @product.id) %>
+              <%= f.button '<i class="fas fa-cart-plus"></i>&nbsp;add'.html_safe, class: "btn btn-primary" %>
+            <% end %>
+
           </div>
         </div>
         <!-- /action buttons -->

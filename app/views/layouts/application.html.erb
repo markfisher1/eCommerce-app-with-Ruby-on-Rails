@@ -46,16 +46,13 @@
         <!-- items -->
         <div class="navbar-nav text-right row justify-content-end align-self-end ml-auto">
 
-          <!-- item 0 -->
+          <!-- home page -->
           <%= link_to "home", root_path, class: "nav-item nav-link active" %>
 
-          <!-- item 1 -->
-          <%= link_to "orders", orders_path, class: "nav-item nav-link" %>
+          <!-- info page -->
+          <%= link_to "info", simple_pages_about_path, class: "nav-item nav-link" %>
 
-          <!-- item 2 -->
-          <%= link_to "about", simple_pages_about_path, class: "nav-item nav-link" %>
-
-          <!-- item 3 -->
+          <!-- contact page -->
           <%= link_to "contact", simple_pages_contact_path, class: "nav-item nav-link" %>
 
 
@@ -66,8 +63,14 @@
               <div class="dropdown-menu">
                 <div class="dropdown-divider d-block d-md-none w-50 ml-auto">
                 </div>
-                <%= link_to "settings&nbsp;<i class='fas fa-cogs'></i>".html_safe, edit_user_registration_path, class: "dropdown-item" %>
-                <%= link_to "logout&nbsp;<i class='fas fa-sign-out-alt'></i>".html_safe, destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                <!-- user settings -->
+                <%= link_to "<i class='fas fa-cogs'></i>&nbsp;settings".html_safe, edit_user_registration_path, class: "dropdown-item w-100 text-left" %>
+
+                <!-- user orders -->
+                <%= link_to "<i class='fas fa-archive left'></i>&nbsp;orders".html_safe, orders_path, class: "dropdown-item w-100 text-left" %>
+
+                <!-- logout -->
+                <%= link_to "<i class='fas fa-sign-out-alt'></i>&nbsp;logout".html_safe, destroy_user_session_path, method: :delete, class: "dropdown-item w-100 text-left" %>
               </div>
             </div>
             <!-- end of user drop menu -->
@@ -95,9 +98,24 @@
       <!-- global flash notice -->
       <div class="row m-0 p-0 justify-content-center notice-box w-100">
 
-        <div class="col-12 text-secondary notice-box-text">
-          <%= flash[:notice] %>
+        <% if alert %>
+        <div class="alert alert-warning info-popout fade show">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= alert %>
         </div>
+        <% end %>
+
+        <% if notice %>
+        <div class="alert alert-success info-popout fade show">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= notice %>
+        </div>
+        <% end %>
+
 
 
       </div>

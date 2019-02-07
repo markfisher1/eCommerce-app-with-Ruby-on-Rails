@@ -4,7 +4,7 @@
 
     <div class="row m-0 p-0">
       <div class="col m-0 p-0 header">
-        <h2 class="pl-3 text-left text-md-center pl-md-0"><i class="fas fa-cogs"></i> edit <%= resource_name.to_s.humanize %></h2>
+        <h2 class="pl-3 text-left text-md-center pl-md-0"><i class="fas fa-cogs"></i> edit <%= resource_name.to_s %></h2>
       </div>
     </div>
 
@@ -26,13 +26,23 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <div class="input-group">
             <div class="input-group-prepend">
+              <span class="input-group-text w-100">First Name</span>
+            </div>
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control w-50" %>
+          </div>
+          <small class="form-text text-muted px-1">
+            fill in with your first given name.
+          </small>
+
+          <div class="input-group mt-4">
+            <div class="input-group-prepend">
               <span class="input-group-text w-100">email</span>
             </div>
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-50" %>
-            <small class="form-text text-muted px-1">
-              pick new email.
-            </small>
           </div>
+          <small class="form-text text-muted px-1">
+            pick new email.
+          </small>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -43,30 +53,30 @@
               <span class="input-group-text w-100">password</span>
             </div>
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control w-50" %>
-            <small class="form-text text-muted px-1">
-              pick a new password.
-            </small>
           </div>
+          <small class="form-text text-muted px-1">
+            pick a new password.
+          </small>
 
           <div class="input-group mt-4">
             <div class="input-group-prepend">
               <span class="input-group-text w-100">confirm pass</span>
             </div>
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control w-50" %>
-            <small class="form-text text-muted px-1">
-              confirm your new password.
-            </small>
           </div>
+          <small class="form-text text-muted px-1">
+            confirm your new password.
+          </small>
 
           <div class="input-group mt-4">
             <div class="input-group-prepend">
               <span class="input-group-text w-100">current pass</span>
             </div>
             <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control w-50" %>
-            <small class="form-text text-muted px-1">
-              please provide your current password to confirm the required changes.
-            </small>
           </div>
+          <small class="form-text text-muted px-1">
+            please provide your current password to confirm the required changes.
+          </small>
 
           <!-- error display -->
           <div class="row m-0 p-0">

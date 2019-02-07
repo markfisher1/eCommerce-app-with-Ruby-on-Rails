@@ -1,5 +1,5 @@
 
-  <div class="col-6 col-md-4 m-0 p-1 p-md-2 col-lg-3 mt-2">
+  <div id="product-card-<%= product.id %>" class="col-6 col-md-4 m-0 p-1 p-md-2 col-lg-3 mt-2">
 
     <div class="card product_list">
       <div class="card-title border-bottom">
@@ -24,7 +24,10 @@
           </p>
         </div><!-- /wrapper is here bc i know im gonna need it to style the text better -->
         <div class="col-12 p-0 text-right mt-2">
-          <%= link_to "Show", product, class: "btn btn-outline-secondary" %>
+          <%= form_for(:order, url: orders_create_path, method: :post) do |f| %>
+            <%= f.hidden_field(:product_id, :value => product.id) %>
+            <%= f.button "add", class: "btn btn-outline-secondary" %>
+          <% end %>
         </div>
       </div>
     </div>

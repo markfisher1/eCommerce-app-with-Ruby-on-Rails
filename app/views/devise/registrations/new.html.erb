@@ -16,30 +16,30 @@
               <span class="input-group-text w-100">email</span>
             </div>
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w50" %>
-            <small class="form-text text-muted px-1">
-              introduce your email address and make sure you add us back into your contacts.
-            </small>
           </div>
+          <small class="form-text text-muted px-1">
+            introduce your email address and make sure you add us back into your contacts.
+          </small>
 
           <div class="input-group mt-4">
             <div class="input-group-prepend">
               <span class="input-group-text w-100">password</span>
             </div>
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control w-50" %>
-            <small class="form-text text-muted px-1">
-              introduce your password.
-            </small>
           </div>
+          <small class="form-text text-muted px-1">
+            introduce your password.
+          </small>
 
           <div class="input-group mt-4">
             <div class="input-group-prepend">
               <span class="input-group-text w-100">confirm pass</span>
             </div>
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control w-50" %>
-            <small class="form-text text-muted px-1">
-              confirm your password.
-            </small>
           </div>
+          <small class="form-text text-muted px-1">
+            confirm your password.
+          </small>
 
           <div class="actions row m-0 p-0 mt-4">
 
@@ -56,7 +56,7 @@
               <%= devise_error_messages! %>
             </div>
           </div>
-          
+
         <% end %>
       </div>
     </div>

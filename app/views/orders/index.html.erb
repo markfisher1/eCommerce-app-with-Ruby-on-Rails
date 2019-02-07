@@ -1,38 +1,54 @@
-<h2 class="pt-3">Orders</h2>
-
-<p>List of complete orders table.</p>
-
+<div class="row m-0 p-0">
+  <div class="col m-0 p-0">
+    <h2 class="pt-3">Your cart</h2>
+  </div>
+</div>
 
 <div id="orders" class="row justify-content-center">
-  <div class="col-12 col-lg-10 px-0 px-md-3">
+  <% if @orders.length < 1 %> <!-- default view for empty cart -->
+    <div class="col-12 m-0 ">
+      <p>
+        Currently you have no items on your cart.<br>
+        Visit our <%= link_to "products", root_path, class: "text-primary" %> and search for something you like.
+      </p>
+    </div>
+  <% else %>
+    <!-- print main table elements -->
+    <div class="col-12 m-0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" class="w-50">Item</th>
+            <th scope="col" class="w-25">value</th>
+            <th scope="col" class="w-25"></th>
+          </tr>
+        </thead>
 
-    <% @orders.all.each do |order| %>
-      <div class="row order_list_row mt-2 mx-0 border rounded">
-        <div class="col-4 h-100">
-          <div class="image_order_list_container border rounded">
-            <%=
-              link_to(image_tag(order.product.image_url, class: "img-fluid image_order_list"), order_path(order.id))
-            %>
+        <tbody>
+        <!-- loop to generate table elements and display cart content -->
+        <% @orders.all.each do |order| %>
+          <tr>
+            <td>
+              <%= order.product.name %>
+            </td>
 
-          </div>
-        </div>
+            <td>
+              <span class="dollar">€</span><%= order.total %>
+            </td>
 
-        <div class="col-8 h-100">
-          <div class="row h-100">
-            <div class="col-12 align-self-center">
-              <strong>Last Upddate: </strong> <%= order.updated_at %><br>
-              <strong>Customer: </strong> <%= order.user_id %><br>
-              <strong>Value: </strong> €<%= order.total %><br>
-              <strong>Paid: </strong> <%= order_paid_icon(order) %> <br>
-              <strong>Delivered: </strong> <%= order_status_icon(order) %> <br>
-            </div>
-          </div>
-        </div>
-      </div>
+            <td>
+              <%= form_for(:order, url: orders_destroy_path, method: :post) do |f| %>
+                <%= f.hidden_field(:order_id, :value => order.id) %>
+                <%= f.button '<i class="far fa-trash-alt"></i>'.html_safe, class: "btn btn-sm btn-outline-danger" %>
+              <% end %>
+              <!-- <a href="#" class="btn btn-sm btn-outline-danger">remove</a> -->
+            </td>
+          </tr>
+        <% end %>
+        <!-- end of loop to populate table content -->
+        </tbody>
+      </table>
+    </div>
+  <% end %>
 
-
-
-    <% end %>
-
-  </div>
 </div>

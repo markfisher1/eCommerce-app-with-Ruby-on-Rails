@@ -19,3 +19,4 @@
 //= require jquery.touchSwipe.min
 //= require_tree .
 //= require products
+//= require notice

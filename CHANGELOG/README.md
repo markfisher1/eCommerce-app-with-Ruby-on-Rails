@@ -1,6 +1,17 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.17 - 07/feb/19] > 5.5 > User authorisation
+
+- Install gem `cancancan`.
+- Patch minimal authorisations for users.
+- Allow users to view only their own profile page.
+- Allow users to view only their own orders.
+- Deny users to edit products but allow them to view them.
+- Patch orders `controller` to filter results by `user_id` and `paid` status.
+- Add alert notice boxes to inform users of server response.
+- Patch small fixes on user registration/editing and login forms.
+
 ## [v0.16 - 06/feb/19] > Fix login error message display
 
 ## [v0.16 - 06/feb/19] > 5.4 > User authentication & account managing view styling

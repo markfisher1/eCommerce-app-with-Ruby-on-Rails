@@ -4,7 +4,7 @@ margin-bottom: 3vh;
 
   // header handling
   .header{
-    
+
   }
   // handle timestamp
   .order_timestamp{
@@ -16,15 +16,15 @@ margin-bottom: 3vh;
   }
 }
 
-#orders{
 
+#orders{
 
   // row order handler
   .order_list_row{
-    height: 20vh;
+    height: 10vh;
     // query for div height
     @media (min-width: 550px){
-      height: 30vh;
+      height: 15vh;
     }
     font-size: 0.7em;
     // query for font-size

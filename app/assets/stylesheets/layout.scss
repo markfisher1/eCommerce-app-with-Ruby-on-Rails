@@ -9,7 +9,7 @@ body{
 
 // NOTICE BOX
 .notice-box{
-  position: absolute;
+  position: fixed;
   top: 10vh;
   width: 80%;
   left: 0;
@@ -20,7 +20,16 @@ body{
   }
 }
 
+// close button for notices
+.info-popout{
 
+  .close{
+    position: absolute;
+    top: 0;
+    right: 2px;
+    font-size: 1.2em;
+  }
+}
 
 // general content box with >= 100vh;
 .content-box{
