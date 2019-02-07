@@ -1,6 +1,10 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.18 - 07/feb/19] > Fix authorisation issues
+
+- Block user from viewing: `/users/`, `/users/edit`, `users/new`.
+
 ## [v0.17 - 07/feb/19] > 5.5 > User authorisation
 
 - Install gem `cancancan`.

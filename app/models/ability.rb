@@ -7,7 +7,7 @@ class Ability
     # user permissions
     can :manage, User, id: user.id
     can :manage, Order, user_id: user.id
-    can :read, Product
+    can :read, Product    
 
   end
 

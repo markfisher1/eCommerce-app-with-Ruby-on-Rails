@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    # admin validation comes here
+    flash[:alert] = "You have no permission to view the requested page."
+    redirect_to root_path
   end
 
   # GET /users/1
@@ -14,10 +17,16 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    # admin validation comes here
+    flash[:notice] = "You have no permission to view the requested page."
+    redirect_to root_path
   end
 
   # GET /users/1/edit
   def edit
+    # admin validation comes here
+    flash[:notice] = "You have no permission to view the requested page."
+    redirect_to root_path
   end
 
   # POST /users
