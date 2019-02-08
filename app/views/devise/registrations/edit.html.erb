@@ -4,79 +4,187 @@
 
     <div class="row m-0 p-0">
       <div class="col m-0 p-0 header">
-        <h2 class="pl-3 text-left text-md-center pl-md-0"><i class="fas fa-cogs"></i> edit <%= resource_name.to_s %></h2>
+        <h2 class="pl-3 text-left text-md-center pl-md-0">
+          <i class="fas fa-cogs"></i> edit <%= resource_name.to_s %>
+          <%= link_to '<i class="far fa-eye"></i>&nbsp;view profile'.html_safe,
+                  user_path(current_user.id),
+                  class: "btn btn-sm btn-outline-secondary ml-5"
+                  %>
+        </h2>
       </div>
     </div>
 
 
     <div class="row m-0 p-0 justify-content-center h-100">
-      <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-4 m-0 p-0 align-self-center">
-
-        <!-- intro text -->
-        <div class="row m-0 p-0">
-          <div class="col m-0 p-0">
-            <p class="font-italic text-secondary text-center">
-              please change only the fields that you want to change
-            </p>
-          </div>
-        </div>
-        <!-- /intro text -->
+      <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-4 m-0 p-0 pt-4">
 
         <!-- form -->
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text w-100">First Name</span>
-            </div>
-            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control w-50" %>
-          </div>
-          <small class="form-text text-muted px-1">
-            fill in with your first given name.
-          </small>
+        <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), html: { method: :patch }) do |f| %>
 
-          <div class="input-group mt-4">
-            <div class="input-group-prepend">
-              <span class="input-group-text w-100">email</span>
+          <!-- LOGIN DETAILS AREA -->
+          <div class="row m-0 p-0 border-bottom pb-3">
+            <div class="col m-0 p-0 text-muted font-weight-bold pb-4">
+              <i class="fas fa-key"></i>&nbsp;login details
             </div>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-50" %>
-          </div>
-          <small class="form-text text-muted px-1">
-            pick new email.
-          </small>
 
+            <!-- username -->
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">username</span>
+              </div>
+              <%= f.text_field :username, autofocus: true, autocomplete: "new-username", class: "form-control w-50" %>
+            </div>
+            <small class="form-text text-muted px-1">
+              fill in your first given name.
+            </small>
+
+            <!-- email -->
+
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">email</span>
+              </div>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-50" %>
+            </div>
+            <small class="form-text text-muted px-1">
+              pick new email.
+            </small>
+
+          </div>
+          <!-- / LOGIN DETAILS -->
+
+          <!-- personal information -->
+          <div class="row m-0 p-0 border-bottom pb-3">
+            <div class="col m-0 p-0 text-muted font-weight-bold pb-2">
+              <i class="far fa-address-card"></i>&nbsp;personal information
+            </div>
+
+            <!-- first name -->
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">first name</span>
+              </div>
+              <%= f.text_field :first_name, autofocus: true, autocomplete: "new-first_name", class: "form-control w-50" %>
+            </div>
+            <small class="form-text text-muted px-1">
+              fill in your first given name.
+            </small>
+
+            <!-- family name -->
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">last name</span>
+              </div>
+              <%= f.text_field :last_name, autofocus: true, autocomplete: "new-last_name", class: "form-control w-50" %>
+            </div>
+            <small class="form-text text-muted px-1">
+              fill in your family name.
+            </small>
+
+            <!-- personal info notice -->
+            <small class="col-12 m-0 p-0 text-muted  py-4">
+              before you proceed with any purchase we are required to ask you to fill some information.
+            </small>
+            <!-- /personal info notice -->
+
+            <!-- street name -->
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">street name</span>
+              </div>
+              <%= f.text_field :street_name, autofocus: true, autocomplete: "new-street_name", class: "form-control w-50" %>
+            </div>
+
+            <!-- house number -->
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">house number</span>
+              </div>
+              <%= f.text_field :house_number, autofocus: true, autocomplete: "new-house_number", class: "form-control w-50" %>
+            </div>
+
+            <!-- zipcode -->
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">zipcode</span>
+              </div>
+              <%= f.text_field :zipcode, autofocus: true, autocomplete: "new-zipcode", class: "form-control w-50" %>
+            </div>
+
+            <!-- city -->
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">city</span>
+              </div>
+              <%= f.text_field :city, autofocus: true, autocomplete: "new-city", class: "form-control w-50" %>
+            </div>
+
+            <!-- country -->
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">country</span>
+              </div>
+              <%= f.text_field :country, autofocus: true, autocomplete: "new-country", class: "form-control w-50" %>
+            </div>
+
+          </div>
+          <!-- /personal information -->
+
+          <!-- email confirmation module -->
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
+          <!-- /email confirmation module -->
 
-          <div class="input-group mt-4">
-            <div class="input-group-prepend">
-              <span class="input-group-text w-100">password</span>
+          <!-- change password -->
+          <div class="row m-0 p-0 border-bottom pb-3">
+            <div class="col m-0 p-0 text-muted font-weight-bold pb-2">
+              <i class="fas fa-shield-alt"></i>&nbsp;password
             </div>
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control w-50" %>
+
+            <!-- new password -->
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">password</span>
+              </div>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control w-50" %>
+            </div>
+            <small class="form-text text-muted px-1">
+              pick a new password.
+            </small>
+
+            <!-- confirm new password -->
+            <div class="input-group mt-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text w-100">confirm pass</span>
+              </div>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control w-50" %>
+            </div>
+            <small class="form-text text-muted px-1">
+              confirm your new password.
+            </small>
+
           </div>
-          <small class="form-text text-muted px-1">
-            pick a new password.
-          </small>
+          <!-- /change password -->
 
-          <div class="input-group mt-4">
-            <div class="input-group-prepend">
-              <span class="input-group-text w-100">confirm pass</span>
+
+          <div class="row m-0 p-0 pb-3">
+            <div class="col m-0 p-0 text-muted font-weight-bold pb-2">
+              <i class="fas fa-shield-alt"></i>&nbsp;confirm your changes
             </div>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control w-50" %>
           </div>
-          <small class="form-text text-muted px-1">
-            confirm your new password.
-          </small>
 
+          <!-- current password > NEEDED > to verify changes -->
           <div class="input-group mt-4">
             <div class="input-group-prepend">
-              <span class="input-group-text w-100">current pass</span>
+              <span class="input-group-text w-100">current password<i class="text-danger">*</i></span>
             </div>
-            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control w-50" %>
+            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control w-50", required: true %>
           </div>
           <small class="form-text text-muted px-1">
             please provide your current password to confirm the required changes.
           </small>
+
 
           <!-- error display -->
           <div class="row m-0 p-0">
@@ -89,7 +197,7 @@
 
             <div class="col m-0 p-0">
               <%= f.submit "update", class: "btn btn-success" %>
-              <%= link_to "cancel", root_path, class: "btn btn-primary" %>
+              <%= link_to "cancel", user_path(current_user.id), class: "btn btn-primary" %>
             </div>
 
           </div>

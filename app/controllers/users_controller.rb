@@ -13,19 +13,43 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    set_user
+
+    # get user past orders > limit 5
+    @userLastOrders = Order.where(user_id: current_user.id, paid: 1).limit(5).order(updated_at: :desc)
+
+    # cart items
+    @cartItems = Order.where(user_id: current_user.id, paid: 0).all.order(updated_at: :desc)
+
+    # number of cartItems
+    if @cartItems.count == 0
+      # there are NO items on cart
+      @itemsInCart = "<span class='font-italic'>- empty -</span>".html_safe
+      # give default price 
+      @cartTotalCost = "<span class='font-italic'>--</span>".html_safe
+    else
+      # there are items on cart
+      @itemsInCart = "#{@cartItems.count} item(s)"
+      # calculate total amount to pay with current cart
+      @cartTotalCost = Order.where(user_id: current_user.id, paid: 0).sum(:total)
+    end
+
+
+
+
   end
 
   # GET /users/new
   def new
     # admin validation comes here
-    flash[:notice] = "You have no permission to view the requested page."
+    flash[:alert] = "You have no permission to view the requested page."
     redirect_to root_path
   end
 
   # GET /users/1/edit
   def edit
     # admin validation comes here
-    flash[:notice] = "You have no permission to view the requested page."
+    flash[:alert] = "You have no permission to view the requested page."
     redirect_to root_path
   end
 
@@ -79,4 +103,7 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :username)
     end
+
+    protected
+
 end

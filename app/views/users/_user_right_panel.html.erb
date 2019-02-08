@@ -1,0 +1,88 @@
+<div class="col-12 col-md-6 m-0 p-0">
+
+  <!-- current cart state -->
+  <div class="row m-0 p-0 pt-2">
+    <div class="col-12 m-0 p-0 user-cart-list-wrapper">
+
+      <!-- state title -->
+      <div class="row m-0 p-0">
+        <div class="col-12 m-0 px-2">
+          <h3 class="text-secondary font-italic"><i class="fas fa-shopping-basket"></i>&nbsp;Current cart</h3>
+        </div>
+      </div>
+      <!-- /state title -->
+
+      <!-- state display -->
+      <div class="row m-0 p-0">
+
+        <div class="col-4 m-0 p-0 pl-2 align-self-center">
+          <i class="fas fa-gifts text-secondary"></i> <%= @itemsInCart %>
+        </div>
+
+        <div class="col-4 m-0 p-0 align-self-center">
+          <i class="far fa-money-bill-alt text-secondary"></i> <span class="dollar">€</span><%= @cartTotalCost %>
+        </div>
+
+        <div class="col-4 m-0 p-0 align-self-center text-right pr-2">
+          <%= link_to '<i class="fas fa-shopping-cart"></i>&nbsp;view cart'.html_safe,
+                  orders_path,
+                  class: "btn btn-sm btn-outline-secondary" %>
+        </div>
+      </div>
+
+      <!-- /state display -->
+
+
+    </div>
+  </div>
+  <!-- /current cart state -->
+
+  <!-- past paid orders list -->
+  <div class="row m-0 p-0 pt-2">
+    <div class="col-12 m-0 p-0 user-order-list-wrapper">
+
+      <!-- list title -->
+      <div class="row m-0 p-0">
+        <div class="col-12 m-0 px-2">
+          <h3 class="text-secondary font-italic"><i class="fas fa-cubes"></i>&nbsp;Past orders </h3>
+        </div>
+      </div>
+      <!-- /list title -->
+
+      <!-- list -->
+      <div class="row m-0 p-0">
+        <div class="col-12 m-0 p-0 pl-2">
+          <% if @userLastOrders.count > 0 %>
+
+            <% @userLastOrders.each.with_index do |order, index| %>
+              <div class="row m-0 p-0">
+
+                <div class="col-2 m-0 p-0">
+                  #(<%= order.id %>)
+                </div>
+
+                <div class="col-6 m-0 p-0 text-truncate">
+                  <%= order.product.name %>
+                </div>
+
+                <div class="col-2 m-0 p-0">
+                  <%= order_status_icon(order) %>
+                </div>
+
+                <div class="col-2 m-0 p-0">
+                  <span class="dollar">€</span><%= order.product.price %>
+                </div>
+              </div>
+
+            <% end %>
+
+          <% end %>
+
+
+        </div>
+      </div>
+      <!-- /list -->
+    </div>
+  </div>
+  <!-- /past paid orders list -->
+</div>

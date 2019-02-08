@@ -1,0 +1,102 @@
+<div class="col-12 col-md-6 m-0 p-0 align-self-center">
+
+  <!-- top side inner row -->
+  <div class="row m-0 m-sm-1 m-md-2 m-lg-3 m-xl-5 p-0">
+
+    <!-- user icon -->
+    <div class="col-6 col-md-12 text-center align-self-center p-0 p-md-2 text-secondary">
+      <i class="far fa-user-circle user-icon"></i><i class="fas fa-bars user-icon pl-5 d-none d-md-inline"></i>
+    </div>
+    <!-- /user icon -->
+
+    <!-- user info -->
+    <div class="col-6 col-md-12 text-left px-2 px-md-5 p-0 p-md-2 border border-secondary rounded">
+
+      <!-- name -->
+      <div class="row m-0 p-0">
+
+        <div class="col-1 m-0 p-0 overflow-hidden text-center">
+          <i class="fas fa-signature text-secondary"></i>
+        </div>
+
+        <div class="col-11 m-0 p-0">
+          <%= @user.first_name.capitalize %>&nbsp;<%= @user.last_name.capitalize %>
+        </div>
+
+      </div>
+      <!-- /name -->
+
+      <!-- email -->
+      <div class="row m-0 p-0">
+
+        <div class="col-1 m-0 p-0 overflow-hidden text-center">
+          <i class="fas fa-at text-secondary"></i>
+        </div>
+
+        <div class="col-11 m-0 p-0">
+          <%= @user.email %>
+        </div>
+
+      </div>
+      <!-- /email -->
+
+      <!-- address -->
+      <div class="row m-0 p-0">
+
+        <div class="col-1 m-0 p-0 overflow-hidden text-center">
+          <i class="fas fa-map-marker-alt text-secondary"></i>
+        </div>
+
+        <div class="col-11 m-0 p-0">
+          <!-- address title -->
+          <div class="row m-0 p-0">
+            <div class="col m-0 p-0">
+              Address
+            </div>
+          </div>
+          <!-- /address title -->
+          <!-- address field list with bullets -->
+          <div class="row m-0 p-0">
+            <div class="col m-0 p-0">
+              <ul class="m-0 p-0 pl-3 ul-circle-style">
+
+                <% if !@user.street_name.blank? %>
+                  <li>
+                    <%= @user.street_name.capitalize %>
+                  </li>
+                <% end %>
+
+                <% if !@user.house_number.blank? %>
+                  <li>
+                    House: <%= @user.house_number.capitalize %>
+                  </li>
+                <% end %>
+
+                <% if !@user.zipcode.blank? || !@user.city.blank? %>
+                  <li>
+                    <%= @user.zipcode.blank? ? "" : "#{@user.zipcode}&nbsp;".html_safe %><%= @user.city.capitalize %>
+                  </li>
+                <% end %>
+
+                <% if !@user.country.blank? %>
+                  <li>
+                    <%= @user.country %>
+                  </li>
+                <% end %>
+
+              </ul>
+            </div>
+          </div>
+          <!-- / address field list with bullets -->
+        </div>
+
+      </div>
+      <!-- /address -->
+
+    </div>
+    <!-- /user info -->
+
+  </div>
+  <!-- /top side inner row -->
+
+</div>

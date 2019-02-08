@@ -1,18 +1,54 @@
-<h1 class="pt-3">This is the user profile page</h1>
-Users can only access their own profiles.
-This is not facebook.
+<div id="user-profile" class="row m-0 p-0 pt-3">
 
-<p id="notice"><%= notice %></p>
+  <!-- profile-wrapper -->
+  <div class="col m-1 m-sm-2 m-md-3 m-lg-4 m-xl-5 p-0 user-profile-wrapper rounded shadow bg-light">
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+    <!-- NOTE:
+        outter grids > 2 x 1 row > 1x2 rows on sm devices
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+        LEFT panel contains:
+          GRID 1 x 2 row > 2 x 1 row on sm devices (thats right)
+
+          On the top side:
+          > User icon (or later avatar)
+
+          On the bottom part:
+          > User information {name, email, bla bla bla}
+
+
+        RIGHT panel contains:
+          TABS > single col-12 > all resolutions
+
+          Tab contents >
+          'Table not table' displaying information about Cart selected products
+          'Table not table' displying status of PAID orders
+          'Table not table' with some other userful information
+
+    -->
+    <div class="row m-0 p-0 user-profile-panel-row">
+
+      <!-- settings >> absolute positioned container -->
+      <div class="col-auto user-link-settings m-0 p-0">
+        <%= link_to '<i class="fas fa-wrench"></i>'.html_safe,
+              edit_user_registration_path,
+              class: "btn btn-sm btn-outline-secondary shadow-sm",
+              id: "user-button-settings"
+              %>
+      </div>
+      <!-- /link to settings -->
+
+      <!-- LEFT PANEL  -->
+      <%= render 'user_left_panel' %>
+      <!-- /LEFT PANEL -->
+
+      <!-- RIGHT PANEL -->
+      <%= render 'user_right_panel' %>
+      <!-- /RIGHT PANEL -->
+
+    </div>
+
+  </div>
+  <!-- /profile-wrapper -->
+
+</div>

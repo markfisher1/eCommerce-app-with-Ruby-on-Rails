@@ -63,24 +63,28 @@
               <div class="dropdown-menu">
                 <div class="dropdown-divider d-block d-md-none w-50 ml-auto">
                 </div>
+                <!-- user profile -->
+                <%= link_to "<i class='far fa-user'></i>&nbsp;&nbsp;profile".html_safe, current_user, class: "dropdown-item w-100 text-left" %>
+
                 <!-- user settings -->
-                <%= link_to "<i class='fas fa-cogs'></i>&nbsp;settings".html_safe, edit_user_registration_path, class: "dropdown-item w-100 text-left" %>
+                <%= link_to "<i class='fas fa-cogs'></i>&nbsp;&nbsp;settings".html_safe, edit_user_registration_path, class: "dropdown-item w-100 text-left" %>
 
                 <!-- user orders -->
-                <%= link_to "<i class='fas fa-archive left'></i>&nbsp;orders".html_safe, orders_path, class: "dropdown-item w-100 text-left" %>
+                <%= link_to "<i class='fas fa-shopping-cart'></i>&nbsp;&nbsp;cart".html_safe, orders_path, class: "dropdown-item w-100 text-left" %>
 
                 <!-- logout -->
-                <%= link_to "<i class='fas fa-sign-out-alt'></i>&nbsp;logout".html_safe, destroy_user_session_path, method: :delete, class: "dropdown-item w-100 text-left" %>
+                <%= link_to "<i class='fas fa-sign-out-alt'></i>&nbsp;&nbsp;logout".html_safe, destroy_user_session_path, method: :delete, class: "dropdown-item w-100 text-left" %>
               </div>
             </div>
             <!-- end of user drop menu -->
 
           <% else %> <!-- user is not logged in -->
-            <!-- login -->
-            <%= link_to "login", new_user_session_path, class: "nav-item nav-link" %>
 
             <!-- create account -->
             <%= link_to "register", new_user_registration_path, class: "nav-item nav-link" %>
+
+            <!-- login -->
+            <%= link_to "login", new_user_session_path, class: "nav-item nav-link" %>
 
           <% end %>
 
@@ -112,7 +116,7 @@
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <%= notice %>
+          <%= notice.html_safe %>
         </div>
         <% end %>
 

@@ -13,9 +13,9 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text w-100">email</span>
+              <span class="input-group-text w-100">email / user</span>
             </div>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-50" %>
+            <%= f.text_field :login, autofocus: true, autocomplete: "login", class: "form-control w-50" %>
           </div>
 
           <div class="input-group mt-4">

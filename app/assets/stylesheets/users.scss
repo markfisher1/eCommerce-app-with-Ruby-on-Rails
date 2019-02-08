@@ -14,4 +14,45 @@
     width: 100%;
   }
 
+  .form-control{
+    font-size: 0.9em;
+  }
+
+}
+
+// NOTE: OVERRIDE LOCAL .content
+.content{
+  padding-bottom: 0!important;
+}
+
+// NOTE:
+// Handling of user profile area
+// inner scope should be within tag :nerd_face:
+#user-profile{
+  background-color: $colorBkg-transp;
+
+  // link to user settings
+  .user-link-settings{
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    z-index: 10000;
+  }
+
+  // user profile panel
+  .user-profile-panel-row{
+    min-height: 100%;
+    // background-color: red;
+  }
+
+  // user icon handling
+  .user-icon{
+    font-size: 25vh;
+  }
+
+  // profile wrapper handling
+  .user-profile-wrapper{
+    overflow: hidden;
+  }
+
 }

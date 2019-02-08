@@ -1,6 +1,22 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+## [v0.19 - 08/feb/19] > Add user data fields, patch login keys, profile & settings improvement
+
+- Migrate database to increase number of user table fields.
+- Add simple javascript interaction to `profile view` through `profile.js`.
+- Patch notice & alert animations.
+- Re-organise bootstrap overrides into a single stylesheet file.
+- Patch stylesheets to face the new views and organisation.
+- Patch application controller to better enhance devise functionality.
+- Override default `registrations controller` to allow different redirection upon update.
+- Patch `users controller` to populate `profile view` accordingly.
+- Patch `orders helper` to enable bootstrap tooltips on icons.
+- Patch `user model` & `devise initializer` to enable multiple login keys (email & username).
+- Patch `devise` default views and style accordingly.
+- Patch `layout` to enable `flash[:stuff]`.
+- Patch default `routes` to enable several `post` requests related with orders and to define login `root path`.
+
 ## [v0.18 - 07/feb/19] > Fix authorisation issues
 
 - Block user from viewing: `/users/`, `/users/edit`, `users/new`.

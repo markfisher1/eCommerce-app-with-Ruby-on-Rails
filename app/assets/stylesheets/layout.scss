@@ -2,9 +2,9 @@ body{
   overflow-x: hidden;
 }
 
-.container-fluid{
-  padding-left: 0;
-  padding-right: 0;
+
+.ul-circle-style{
+  list-style-type: circle;
 }
 
 // NOTICE BOX
@@ -28,6 +28,7 @@ body{
     top: 0;
     right: 2px;
     font-size: 1.2em;
+    max-width: 70vw;
   }
 }
 
