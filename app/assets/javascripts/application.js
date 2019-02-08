@@ -20,3 +20,4 @@
 //= require_tree .
 //= require products
 //= require notice
+//= require profile

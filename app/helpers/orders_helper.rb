@@ -5,7 +5,7 @@ module OrdersHelper
 
   def order_status_icon(order)
     if order.status == 1
-      "<i class='fas fa-shipping-fast text-success delivery-tooltip' data-toggle='tooltip' data-placement='top' title='package delivered'></i>".html_safe
+      "<i class='fas fa-shipping-fast text-success delivery-tooltip' data-toggle='tooltip' data-placement='top' title='package has been delivered'></i>".html_safe
     else
       "<i class='far fa-clock text-danger delivery-tooltip' data-toggle='tooltip' data-placement='top' title='package on their way'></i>".html_safe
     end

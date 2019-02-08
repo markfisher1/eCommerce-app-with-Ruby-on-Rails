@@ -3,6 +3,12 @@ For better tutoring all significant changes will be kept under this log.
 
 ## [v0.19 - 08/feb/19] > Add user data fields, patch login keys, profile & settings improvement
 
+#### [v0.19.1 - 08/feb/19] > HotFix > require assets
+
+- Add `profile.js` to the required asset tree.
+
+#### [v0.19.0]
+
 - Migrate database to increase number of user table fields.
 - Add simple javascript interaction to `profile view` through `profile.js`.
 - Patch notice & alert animations.
