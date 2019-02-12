@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_many :orders
+  has_many :comments
 
   # mounting image uploader
   mount_uploader :image, ProductImageUploader
@@ -7,8 +8,20 @@ class Product < ApplicationRecord
   # call back to ensure data has a standardised default value if empty
   before_save :add_defaults
 
+  #get highest rated comment from product
+  def highest_rating_comment
+    comments.rating_desc.first
+  end
+
+  # get lowest rated comment from product
+  def lowest_rating_comment
+    comments.rating_asc.first
+  end
+
+  private # PRIVATE AREA BELOW
+
   # private method to search from model
-  private
+
   def self.search(search_term)
     # if development or test use LIKE
     if Rails.env.development? || Rails.env.test?
@@ -21,7 +34,6 @@ class Product < ApplicationRecord
   end
 
   # private method to add the default value if field is left empty
-  private
   def add_defaults
 
     # description default

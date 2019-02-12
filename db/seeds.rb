@@ -11,15 +11,28 @@
 
 case Rails.env
 when 'development' || 'test'
+  # deal with comments table
+  ActiveRecord::Base.connection.execute("DELETE FROM comments")
+  # reset IDs for comments
+  ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'comments'")
+
+  # deal with orders table
+  ActiveRecord::Base.connection.execute("DELETE FROM orders")
+  # reset IDs for orders
+  ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'orders'")
+
   # deal with products table
   ActiveRecord::Base.connection.execute("DELETE FROM products")
-  # deal with orders table
-  ActiveRecord::Base.connection.execute("DELETE FROM orders")
+  # reset IDs for procuts
+  ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'products'")
+
 when 'production'
+  # deal with comments table
+  ActiveRecord::Base.connection.execute("TRUNCATE FROM comments")
+  # deal with orders table
+  ActiveRecord::Base.connection.execute("TRUNCATE FROM orders")
   # deal with products table
   ActiveRecord::Base.connection.execute("TRUNCATE products")
-  # deal with orders table
-  ActiveRecord::Base.connection.execute("DELETE FROM orders")
 end
 
 aves = File.open(Rails.root.join('app/assets/images/aves_shirt.jpg'))
@@ -58,3 +71,39 @@ productArray = [
 ]
 
 Product.create(productArray)
+
+
+# LETS DEAL WITH REVIEWS AND CREATE 3 RANDOM REVIEWs FOR EACH PRODUCT
+# All comments come from a RANDOM user and we are doing it to ALL products
+sampleReviews = [
+  {body: "bad", rating: 1},
+  {body: "not good", rating: 2},
+  {body: "average", rating: 3},
+  {body: "good", rating: 4},
+  {body: "very good", rating: 5}
+]
+
+# NOW LETS LOOP PRODUCTS
+Product.all.each do |prod|
+
+  # 3 runs  per product
+  3.times do
+
+    # get 1 random entry from sampleReviews.
+    review = sampleReviews.sample
+
+    # create the comment
+    Comment.create(
+      user: User.all.sample,
+      product: prod,
+      rating: review[:rating],
+      body: review[:body]
+    )
+
+  end
+
+
+end
+
+# because why not? Easter eggs make the world laugh!
+puts 'Master, Dobby has filled the DB! Dobby is a good house elf!'

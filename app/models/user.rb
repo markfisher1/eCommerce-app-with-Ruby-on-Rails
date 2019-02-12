@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :comments
   # give perms to write on login param
   attr_accessor :login
   # Include default devise modules. Others available are:
@@ -30,7 +31,7 @@ class User < ApplicationRecord
   # check devise github for more info >
 
   # > https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign_in-using-their-username-or-email-address
-  
+
   def self.find_for_database_authentication warden_conditions
   conditions = warden_conditions.dup
   login = conditions.delete(:login)
