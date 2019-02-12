@@ -1,6 +1,18 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.20 - 12/feb/19] > Image uploads & devise hotFix
+
+- Install gem `carrierwaveuploader`.
+- Patch `application controller` to enable some `User` parameters.
+- Patch `product controller` to swap old `image_url` for `image` field.
+- Assign temporary settings to `ability.rb`.
+- Add two different DB migrations to handle the changes within schema.
+- Recode `seeds` to enable the new `image` field and use it correctly.
+- Patch the required views & partials to face the backEnd changes.
+- Add `public/uploads` to `.gitignore` to avoid populate repository with environment related files.
+
+
 ## [v0.19 - 08/feb/19] > Add user data fields, patch login keys, profile & settings improvement
 
 #### [v0.19.1 - 08/feb/19] > HotFix > require assets
