@@ -28,11 +28,7 @@ when 'development' || 'test'
 
 when 'production'
   # deal with comments table
-  ActiveRecord::Base.connection.execute("TRUNCATE comments")
-  # deal with orders table
-  ActiveRecord::Base.connection.execute("TRUNCATE orders")
-  # deal with products table
-  ActiveRecord::Base.connection.execute("TRUNCATE products")
+  ActiveRecord::Base.connection.execute("TRUNCATE comments, orders, products")
 end
 
 aves = File.open(Rails.root.join('app/assets/images/aves_shirt.jpg'))
