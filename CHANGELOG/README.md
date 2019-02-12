@@ -4,6 +4,8 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.21 - 12/feb/19] > 5.7 > Comment model add & patch
 
+#### [v0.21.3 - 08/feb/19] > HotFix > Attempt to fix google storage I 
+
 #### [v0.21.2 - 08/feb/19] > HotFix > `seeds.rb` syntax fix for production II
 
 #### [v0.21.1 - 08/feb/19] > HotFix > `seeds.rb` syntax fix for production

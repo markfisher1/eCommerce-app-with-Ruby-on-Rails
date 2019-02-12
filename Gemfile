@@ -34,8 +34,11 @@ gem 'devise', '~> 4.2'
 gem 'cancancan', '~> 1.10'
 
 #gem carrierwave
-gem 'carrierwave', '~> 1.0'
-
+gem 'carrierwave', '~> 1.2.1'
+# required for upload to google storage
+gem 'fog-google'
+gem "google-api-client", "> 0.8.5", "< 0.9"
+gem "mime-types"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -54,7 +57,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3', '< 1.4'
 end
 
 group :development do
