@@ -1,9 +1,9 @@
 #Changelog
 For better tutoring all significant changes will be kept under this log.
 
-<<<<<<< HEAD
+
 ## [v0.20 - 09/feb/19] > 5.6 > Add database diagram for the current state and further patch
-=======
+
 ### [v0.20 - 12/feb/19] > Image uploads & devise hotFix
 
 - Install gem `carrierwaveuploader`.
@@ -15,7 +15,7 @@ For better tutoring all significant changes will be kept under this log.
 - Patch the required views & partials to face the backEnd changes.
 - Add `public/uploads` to `.gitignore` to avoid populate repository with environment related files.
 
->>>>>>> master
+
 
 ## [v0.19 - 08/feb/19] > Add user data fields, patch login keys, profile & settings improvement
 
