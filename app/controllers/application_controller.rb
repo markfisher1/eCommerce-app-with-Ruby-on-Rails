@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
       :zipcode,
       :house_number,
       :country,
-      :city
+      :city,
+      :email
     ]
     # lets enable our own EDITING parameters for user table, shall we?
     devise_parameter_sanitizer.permit :account_update, keys: customParams

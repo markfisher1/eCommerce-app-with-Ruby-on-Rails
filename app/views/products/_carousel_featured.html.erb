@@ -14,7 +14,7 @@
           <div class="carousel_image_container">
             <a href="<%= "#{products_path}/#{prod.id}" %>">
               <%= image_tag(
-                  asset_path(prod.image_url),
+                  asset_path(prod.image) ,
                   class: "carousel_image mt-0 mt-sm-1 mt-md-5",
                   alt: "dummy_01") %>
             </a>

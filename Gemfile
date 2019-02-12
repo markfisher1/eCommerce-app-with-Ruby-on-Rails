@@ -33,6 +33,9 @@ gem 'devise', '~> 4.2'
 # gem canCan
 gem 'cancancan', '~> 1.10'
 
+#gem carrierwave
+gem 'carrierwave', '~> 1.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

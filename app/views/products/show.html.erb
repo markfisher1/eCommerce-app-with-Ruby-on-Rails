@@ -26,7 +26,7 @@
 
           <div class="col-12 col-md-6">
             <div class="product_image_container border rounded">
-              <%= image_tag(@product.image_url, class: "product_single_image", alt: @product.name) %>
+              <%= image_tag(@product.image_url || "default_product.jpg", class: "product_single_image", alt: @product.name) %>
             </div>
           </div>
 
