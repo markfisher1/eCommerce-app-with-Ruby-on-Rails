@@ -4,6 +4,10 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.21 - 12/feb/19] > 5.7 > Comment model add & patch
 
+#### [v0.21.1 - 08/feb/19] > HotFix > `seeds.rb` syntax fix for production
+
+#### [v0.21]
+
 - Add model for `comments`.
 - Add migration to create `comments field`.
 - Patch `user` and `product` models to add relation to `comments`.
@@ -22,7 +26,7 @@ For better tutoring all significant changes will be kept under this log.
 - Add `public/uploads` to `.gitignore` to avoid populate repository with environment related files.
 
 
-## [v0.19 - 08/feb/19] > Add user data fields, patch login keys, profile & settings improvement
+### [v0.19 - 08/feb/19] > Add user data fields, patch login keys, profile & settings improvement
 
 #### [v0.19.1 - 08/feb/19] > HotFix > require assets
 
