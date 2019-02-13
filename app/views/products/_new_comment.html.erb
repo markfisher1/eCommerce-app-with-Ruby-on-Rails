@@ -1,0 +1,21 @@
+<% if signed_in? %>
+
+  <h4>Add review</h4>
+
+  <%= form_for([@product, @product.comments.build]) do |form| %>
+
+    <div class="form-group">
+      <%= form.label :body, "Comment" %>
+      <%= form.text_area :body, class: "form-control", placeholder: "Explain your experience with this product to other users" %>
+    </div>
+
+    <div class="form-group">
+      <label for="rating-stars" class="d-inline">Satisfaction Meter</label>
+      <div id="rating-stars" class="rating d-inline"></div>
+    </div>
+
+    <%= form.submit "Add review", class: "btn btn-success" %>
+
+  <% end %>
+
+<% end %>

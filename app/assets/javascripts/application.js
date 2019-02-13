@@ -17,6 +17,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require jquery.touchSwipe.min
+//= require jquery.raty
 //= require_tree .
 //= require products
 //= require notice

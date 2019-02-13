@@ -1,6 +1,16 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.22 - 13/feb/19] > 5.8 > Product reviews / comments integration
+
+- Install jQuery plugin `raty`.
+- Rename `productScripts` to extension `.erb`.
+- Patch `typography` stylesheet to face new requirements.
+- Patch `routes` to accept new requests & resources.
+- Patch `product` controller, model & view to handle and format the new fields.
+- Add `comments` helper to remove some basic from the view.
+- Patch `assets.rb` to enable the new vendors.
+
 
 ### [v0.21 - 12/feb/19] > 5.7 > Comment model add & patch
 

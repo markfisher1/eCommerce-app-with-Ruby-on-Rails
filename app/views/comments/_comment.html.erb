@@ -1,0 +1,20 @@
+<div class="row m-0 p-0">
+
+  <div class="col-6 m-0 p-0 font-italic align-self-center">
+    <%= comment.user.username %>
+    <span class="rated" data-score="<%= comment.rating %>"></span>
+  </div>
+
+  <div class="col-6 m-0 p-0 text-right text-muted text-sm align-self-center">
+    <%= formatDate(comment) %>
+  </div>
+
+  <div class="col-12 m-0 p-2 text-md">
+    "<%= comment.body %>"
+  </div>
+
+  <div class="col-12 m-0 p-0">
+    <hr>
+  </div>
+
+</div>

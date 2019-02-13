@@ -32,6 +32,7 @@
 
           <div class="col-12 col-md-6">
             <div class="row product_specifics">
+
               <div class="wrapper col-12 align-self-center">
                 <strong>Description:</strong><br>
                 <%= @product.description.capitalize %><br>
@@ -41,12 +42,44 @@
                 <br>
                 <strong>Price:</strong>
                 <span class="dollar">€</span><%= @product.price %><br>
+                <br>
+                <strong>Product Rating:</strong>
+                <div class="rated" data-score="<%= @product.average_rating %>"></div>
               </div>
+
             </div>
+          </div>
+
+          <div class="col-12">
+            <hr>
           </div>
 
         </div>
         <!-- /grid 2 slots > image & specifics -->
+
+        <!-- reviews -->
+        <div id="comments-box" class="row justify-content-center">
+
+          <div class="col-12 m-0 pb-5">
+            <h4>Product reviews</h4>
+          </div>
+
+          <div class="col-12 m-0">
+            <%= render @comments %>
+          </div>
+
+        </div>
+        <!-- /reviews -->
+
+        <!-- NEW comments box -->
+        <div class="row justify-content-center pb-5">
+
+          <div class="col-12 m-0">
+            <%= render "new_comment" %>
+          </div>
+
+        </div>
+        <!-- /NEW comments box -->
 
         <!-- /this is the product overview section -->
       </div>

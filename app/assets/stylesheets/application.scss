@@ -13,6 +13,8 @@
  // *= require_self
  */
 
+@import "jquery.raty";
+
 @import "variables";
 @import "typography";
 @import "bootstrap";
@@ -22,6 +24,6 @@
 @import "simple_pages";
 @import "users";
 @import "orders";
-
+@import "comments";
 
 // *= require_tree .

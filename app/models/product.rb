@@ -18,6 +18,11 @@ class Product < ApplicationRecord
     comments.rating_asc.first
   end
 
+  # calculate product average rating
+  def average_rating
+    comments.average(:rating).to_f
+  end
+
   private # PRIVATE AREA BELOW
 
   # private method to search from model
