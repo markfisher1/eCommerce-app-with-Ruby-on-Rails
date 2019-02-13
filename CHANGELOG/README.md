@@ -1,7 +1,18 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+
+
 ### [v0.22 - 13/feb/19] > 5.8 > Product reviews / comments integration
+
+#### [v0.22.1 - 13/feb/19] > HotFix > Fix small variety of issues
+
+- Patch `comments` helper to fix username display if field is blank and assign default text.
+- Patch `ability` to remove product edition permit from users.
+- Patch `footer` within main layout to fix dynamic display of the current year.
+- Patch `new comment` partial view to display default alert warning user that he must login to post a new review.
+
+#### [v0.22]
 
 - Install jQuery plugin `raty`.
 - Rename `productScripts` to extension `.erb`.
