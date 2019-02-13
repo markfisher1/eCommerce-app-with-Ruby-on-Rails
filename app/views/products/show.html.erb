@@ -64,8 +64,20 @@
             <h4>Product reviews</h4>
           </div>
 
-          <div class="col-12 m-0">
+          <div class="col-12 m-0 pb-3">
+            <div class="row m-0 p-0 justify-content-end">
+              <div class="col m-0 p-0">
+                <%= will_paginate @comments, list_classes: ['pagination-sm', 'pagination', 'justify-content-end'] ,renderer: WillPaginate::ActionView::BootstrapLinkRenderer, params: {anchor: "comments-box"} %>
+              </div>
+            </div>
+
             <%= render @comments %>
+
+            <div class="row m-0 p-0 justify-content-end">
+              <div class="col m-0 p-0">
+                <%= will_paginate @comments, list_classes: ['pagination-sm', 'pagination', 'justify-content-end'] ,renderer: WillPaginate::ActionView::BootstrapLinkRenderer, params: {anchor: "comments-box"} %>
+              </div>
+            </div>
           </div>
 
         </div>

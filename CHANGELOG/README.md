@@ -1,7 +1,15 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.23 - 13/feb/19] > 5.9 > Product reviews pagination & validation
 
+- Install gem `will_paginate`.
+- Install gem `will_paginate-bootstrap4`.
+- Patch `bootstrap_overrides` stylesheet to style bootstrap default classes for pagination.
+- Patch `comments` controller to enable minimal data validation pre-save.
+- Patch `products` controller to paginate the given results.
+- Patch `_new_comment` partial to enable html5 required field parameter.
+- Patch `products show` view to place pagination buttons.
 
 ### [v0.22 - 13/feb/19] > 5.8 > Product reviews / comments integration
 

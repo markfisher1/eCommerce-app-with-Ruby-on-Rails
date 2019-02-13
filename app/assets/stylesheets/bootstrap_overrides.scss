@@ -8,3 +8,21 @@
 .rounded{
   border-radius: 0.15em!important;
 }
+
+
+.page-link{
+  color: var(--secondary);
+}
+
+.page-link:hover{
+  color: var(--secondary);
+}
+
+.page-item.active{
+
+  .page-link{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+  }
+
+}

@@ -8,6 +8,9 @@ class Product < ApplicationRecord
   # call back to ensure data has a standardised default value if empty
   before_save :add_defaults
 
+  # validate product stuff
+  validates :name, presence: true
+
   #get highest rated comment from product
   def highest_rating_comment
     comments.rating_desc.first
