@@ -3,7 +3,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   # Choose what kind of storage to use for this uploader:
-  storage :fog
+  storage :gcloud
   # storage :fog
 
   # Override the directory where uploaded files will be stored.

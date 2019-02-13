@@ -34,11 +34,14 @@ gem 'devise', '~> 4.2'
 gem 'cancancan', '~> 1.10'
 
 #gem carrierwave
-gem 'carrierwave', '~> 1.2.1'
+gem 'carrierwave'
+gem 'carrierwave-google-storage'
 # required for upload to google storage
-gem 'fog-google'
-gem "google-api-client", "> 0.8.5", "< 0.9"
-gem "mime-types"
+gem 'google-api-client'
+gem 'mime-types'
+
+
+gem 'figaro'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

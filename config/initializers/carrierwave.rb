@@ -1,9 +1,16 @@
 CarrierWave.configure do |config|
-  config.fog_provider = 'fog/google'
-  config.fog_credentials = {
-    provider: 'Google',
-    google_project: Rails.application.secrets.google_cloud_storage_project_name,
-    google_json_key_string: Rails.application.secrets.google_cloud_storage_credential_content
+  config.storage                             = :gcloud
+  config.gcloud_bucket                       = 'gomes-commerce'
+  config.gcloud_bucket_is_public             = true
+  config.gcloud_authenticated_url_expiration = 600
+  # config.gcloud_content_disposition          = 'attachment' // or you can skip this
+
+  config.gcloud_attributes = {
+    expires: 600
   }
-  config.fog_directory = Rails.application.secrets.google_cloud_storage_bucket_name
+
+  config.gcloud_credentials = {
+    gcloud_project: 'railsapp01',
+    gcloud_keyfile: JSON.parse(ENV['GOOGLE_CLIENT_SECRETS'])
+  }
 end

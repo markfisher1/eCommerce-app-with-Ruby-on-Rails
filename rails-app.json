@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "railsapp01",
+  "private_key_id": "16cdeafc5ab1be848d34c773535da19114731689",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDVh19VgHuOXrGG\nC3heBuDXPzyajl4FQGK7rbGMWwDx3kP6SIzrUTESHPo4HAVueUvNj3xKtBRik6FL\nUGrwZU97rbf1c03CrbPJS/U6zo1POKUMDpXdlKrZdU1aL3/DxQLpfxJTqIMZqfd3\neLHsEqs4RPRgVDEqNOQBr5+mcGRKn5kwFPjYnOh2tPaBXZQuGekMl11gXoSNgICm\ncTHQdsoPQOkagTU9TAWFNJppJGStWR/I8UKu+Bp4zDleipyCSzkYtcWi370ddiEM\ntrG8/JAh21jrKkr4zhJ7kalMYP8nw1WDg8Tm8HvpHejKoLd7rApmdhVYg9aREsGS\nUjIdvIvvAgMBAAECggEAIk+9dvzNXeRDfHmtXtaWHKBxuZg07X0aIHRZumcJMNR5\ncedklY+XZgS4BHokOUtObfqni02ClRCJ85M5i+WLryEMFWnwzd6hrDADeO6l8Fv2\n0Ygqds+j4Iuj4WEOk8O9ow2jQUQrxNz2AgGn/XpGfyU9a5k7yT90f/zbl6ApzX+q\neFT3XK7Hh8sRbmhZE2LSujRp3K6FnkmXjy0vadphCEF5iKGXOehmZbijgvn1S+VA\nMxVvHPA8Ykw3y7/vbGBF2JkQxZMW/a9FXT5NWGmiAdjPsXNYAQ+nC6AEUP9lJ1Zh\nJSTYzE5L94t/Z63jwQGyhR6DAQfZsGpRB9Vsyx09aQKBgQD9f4G+M2YVOD00YeE+\npHpQjdC3MhaGD98kz+iwtxp8Wq8ve0vsimhn9LRmY7ijJAeR9T3N3hecUcTjaRVa\n0Di0duFGuDz/vgiwUqA+wVR0U5ehL9iJqJBU+KTV8McMetqWJZYvwV0wxpqwKeo7\nUof0Lj8PArKytVxEyn3jCcnSzQKBgQDXouDhSxi5qCZK8qP+ti9CnDYCBMB2jvUn\n/f5El7NPE1aic+La4dCfYnuN80AjgYa9fTfEM16HLrhUIuw4t8rZZsLKKYbkWIqo\npltTunXBDEHhombLu3P4spHQPvKmAsGZF25+4DgN89PhWoAxK13O7NsPY60+Ait6\nB62wz+GxqwKBgQCg2PcKKLLtY/Hx+ulhRhwWYOW+WBnSlt+QDBwphQVZQnFGP4W9\nYVU+IRcWoM/XNFVZV7MPnYx9s6SqZ1MVfGl+mK/4n46U94+r0cG8EA/2f9QGgsVz\nE3IBeIOe/FhQouNvwgm544euG1ar0Oy/F28MkQuSCrQ4kLsrKxEVrnBRQQKBgC6k\nrMAO3mpKVP4hPhf6kH54C7akEH2UrrLX3gg4SDDynerF5mwyLE5Nnyw1UcpcWiji\nzQ1Dj07ubDDG3RHnr5kXAUt5cBQ0ksmoMlkKHC6F2DpWRqYLBirldWT2OMZwEjBr\nQRtwpK9f7pTwXopENyZrVXceuHqRPZZH0upMDSXBAoGAAjlms9AvFfaiNvzxwkkS\nBV9ffnFmATnIWjHEetsi5oO0TDkswBrNYx2q8AyEDkabjbIp20WNKOu0DRElIidc\nf8Q+Zt2Ir85xo2wpMFyD+RFOYCSJtEdOtp6k6KmiHOT+eeReDyy7LHChT6XTwa5v\nXMkXR/OCzySzAupXQBtpRc8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "railsappadmin@railsapp01.iam.gserviceaccount.com",
+  "client_id": "107023419197755475095",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/railsappadmin%40railsapp01.iam.gserviceaccount.com"
+}
