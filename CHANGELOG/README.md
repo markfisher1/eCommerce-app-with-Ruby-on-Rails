@@ -4,6 +4,8 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.21 - 12/feb/19] > 5.7 > Comment model add & patch
 
+#### [v0.21.5 - 13/feb/19] > HotFix > Assign `env` variables for sensitive data
+
 #### [v0.21.4 - 13/feb/19] > HotFix > Attempt to fix google storage II
 
 - Install gem `carrierwave-google-storage`.
