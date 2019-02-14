@@ -9,6 +9,10 @@ class Ability
     can :manage, Order, user_id: user.id
     can :read, Product
 
+    if user.admin?
+      can :manage, :all
+    end
+
   end
 
 end

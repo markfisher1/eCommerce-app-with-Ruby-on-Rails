@@ -1,6 +1,14 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.24 - 14/feb/19] > 5.10 > Admin role && comment moderation
+
+- Migrate DB to insert admin boolean flag to users.
+- Patch `ability` to validate admin flag before certain actions.
+- Patch `comments` partial view to insert moderation functionality.
+- Patch `comments` controller to add `destroy` method.
+
+
 ### [v0.23 - 13/feb/19] > 5.9 > Product reviews pagination & validation
 
 - Install gem `will_paginate`.
