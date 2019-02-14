@@ -3,6 +3,10 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.25 - 14/feb/19] > Send email on registration
 
+#### [v0.26.1] > HotFix > Patch template and login link within email body
+
+#### [v0.25]
+
 - Add `register_info` mailer template.
 - Patch `user` model & `user_mailer` mailer to enable the mailing action.
 
