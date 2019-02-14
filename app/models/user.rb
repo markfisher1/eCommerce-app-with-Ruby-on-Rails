@@ -15,6 +15,15 @@ class User < ApplicationRecord
   # otherwise it will find 2 results for the same user.
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
+
+  # send email after signup
+  after_create :send_email_signup
+
+
+  def send_email_signup
+    UserMailer.register_info(self).deliver_now
+  end
+
   def login
     # accepts 'login' var as username or email.
     # whatever it gets as input.

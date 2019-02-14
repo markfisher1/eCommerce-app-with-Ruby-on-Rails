@@ -1,6 +1,12 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.25 - 14/feb/19] > Send email on registration
+
+- Add `register_info` mailer template.
+- Patch `user` model & `user_mailer` mailer to enable the mailing action.
+
+
 ### [v0.24 - 14/feb/19] > 5.10 > Admin role && comment moderation
 
 - Migrate DB to insert admin boolean flag to users.
