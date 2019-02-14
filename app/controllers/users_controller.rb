@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if @cartItems.count == 0
       # there are NO items on cart
       @itemsInCart = "<span class='font-italic'>- empty -</span>".html_safe
-      # give default price 
+      # give default price
       @cartTotalCost = "<span class='font-italic'>--</span>".html_safe
     else
       # there are items on cart
@@ -34,7 +34,14 @@ class UsersController < ApplicationController
       @cartTotalCost = Order.where(user_id: current_user.id, paid: 0).sum(:total)
     end
 
+    # escape possible NIL errors with user data
+    if @user.first_name.blank?
+      @user.first_name = "anonymous"
+    end
 
+    if @user.last_name.blank?
+      @user.last_name = ""
+    end
 
 
   end

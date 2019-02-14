@@ -3,6 +3,12 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.25 - 14/feb/19] > Send email on registration
 
+#### [v0.26.2] > HotFix > Patch login link within email & fix bugs
+
+- Patch `register_info` mailer view template to add static link to login page.
+- Patch `user_mailer` mailer controller to fix linking with a temporary static solution.
+- Fix bug with `nil` `first_name` or `last_name` while on page view.
+
 #### [v0.26.1] > HotFix > Patch template and login link within email body
 
 #### [v0.25]

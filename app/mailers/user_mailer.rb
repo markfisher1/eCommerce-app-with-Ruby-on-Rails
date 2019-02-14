@@ -21,7 +21,7 @@ class UserMailer < ApplicationMailer
     @message = "
       <p>
         Welcome to my WebShop #{user.username}.<br>
-        You can now log in <a href='#{Rails.root.join('login')}'>here</a>.
+        You can now log in <a href='https://railsapp01.herokuapp.com/login'>here</a>.
       </p>
     ".html_safe
 
