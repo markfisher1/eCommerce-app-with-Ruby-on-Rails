@@ -1,4 +1,4 @@
-<% if signed_in? && current_user.admin? %>
+<% if current_user&.admin? %>
 <!-- admin section -->
 <div class="row m-0 p-0">
 
@@ -7,7 +7,8 @@
         product_comment_path(comment.product, comment),
         method: :delete,
         data: { confirm: 'Are you sure?' },
-        class: "btn btn-sm btn-danger"
+        class: "btn btn-sm btn-danger",
+        remote: true
     %>
   </div>
 
@@ -15,7 +16,7 @@
 <!-- /admin section -->
 <% end %>
 
-<div class="row m-0 p-0">
+<div id="comment-container-<%= comment.id %>" class="row m-0 p-0">
 
   <div class="col-6 m-0 p-0 font-italic align-self-center">
     <%= getUsername(comment) %>

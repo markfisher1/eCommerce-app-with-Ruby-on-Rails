@@ -13,23 +13,41 @@ class OrdersController < ApplicationController
     @orderCost = @orderProduct.price
 
     # prepare object for DB entry
-    @newOrderObject = [:user_id => @userID, :product_id => @productID, :total => @orderCost, :paid => @paid, :status => @status];
+    @newOrderObject = {:user_id => @userID, :product_id => @productID, :total => @orderCost, :paid => @paid, :status => @status};
     # Insert object in DB > and redirect back
 
-    if Order.create(@newOrderObject)
-      # set notice
-      flash[:notice] = "item added to your cart."
-      # redirect with uneccesary origin check bc im not yet using ajax here.
-      if request.env['HTTP_REFERER'] == "https://#{request.domain}/" || request.env['HTTP_REFERER'] == "http://#{request.domain}:3000/"
-        redirect_to "#{request.env['HTTP_REFERER']}#product-card-#{@productID}"
-      else
-        redirect_to request.env['HTTP_REFERER']
+      respond_to do |format|
+
+        @order = Order.new(@newOrderObject)
+
+        if @order.save
+
+          format.html do
+            # JS is disabled > lets handle it with html request.
+            # set notice
+            flash[:notice] = "item added to your cart."
+
+            redirect_back fallback_location: products_path
+
+          end
+
+          format.js
+
+        else  # no order was created
+
+          format.html do
+            flash[:alert] = "There was an error adding your order. Please try again"
+
+            redirect_back fallback_location: products_path
+          end
+
+          format.js
+
+
+        end
+
       end
 
-
-    else
-      render html: "<script>alert('error adding product to cart')</script>".html_safe
-    end
   end
 
   def index

@@ -24,7 +24,7 @@
           </p>
         </div><!-- /wrapper is here bc i know im gonna need it to style the text better -->
         <div class="col-12 p-0 text-right mt-2">
-          <%= form_for(:order, url: orders_create_path, method: :post) do |f| %>
+          <%= form_for(:order, url: orders_create_path, method: :post, remote:true) do |f| %>
             <%= f.hidden_field(:product_id, :value => product.id) %>
             <%= f.button "add", class: "btn btn-outline-secondary" %>
           <% end %>

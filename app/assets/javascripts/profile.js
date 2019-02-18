@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on("turbolinks:load", function(){
 
   // enable delivery icons tooltips
   $(".delivery-tooltip").tooltip();

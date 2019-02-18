@@ -65,17 +65,21 @@
           </div>
 
           <div class="col-12 m-0 pb-3">
-            <div class="row m-0 p-0 justify-content-end">
+            <div class="row m-0 p-0 justify-content-end comments-paginate">
               <div class="col m-0 p-0">
-                <%= will_paginate @comments, list_classes: ['pagination-sm', 'pagination', 'justify-content-end'] ,renderer: WillPaginate::ActionView::BootstrapLinkRenderer, params: {anchor: "comments-box"} %>
+                <%= render "paginate_comments" %>
               </div>
             </div>
 
-            <%= render @comments %>
+            <div class="row m-0 p-0">
+              <div id="comments-container" class="col m-0 p-0">
+                <%= render @comments %>
+              </div>
+            </div>
 
-            <div class="row m-0 p-0 justify-content-end">
+            <div class="row m-0 p-0 justify-content-end comments-paginate">
               <div class="col m-0 p-0">
-                <%= will_paginate @comments, list_classes: ['pagination-sm', 'pagination', 'justify-content-end'] ,renderer: WillPaginate::ActionView::BootstrapLinkRenderer, params: {anchor: "comments-box"} %>
+                <%= render "paginate_comments" %>
               </div>
             </div>
           </div>

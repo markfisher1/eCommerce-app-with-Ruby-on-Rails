@@ -1,6 +1,14 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.26 - 18/feb/19] > 5.11 > Ajax requests
+
+- Patch `profile.js` asset to enable turbolinks load.
+- Patch `comments` and `orders` controllers to enable remote requests (AJAX).
+- Add AJAX view renderers to populate DOM after user action.
+- Patch related partials to deliver complete necessary render.
+
+
 ### [v0.25 - 14/feb/19] > Send email on registration
 
 #### [v0.26.2] > HotFix > Patch login link within email & fix bugs
