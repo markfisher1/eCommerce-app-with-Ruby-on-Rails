@@ -1,6 +1,14 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.27 - 19/feb/19] > 6.1 > Rspec & File cleanup 
+
+- Install gem `Rspec`.
+- Add spec files for `comment`, `order`, `product` and `user` models.
+- Remove sensitive `json` file from repo.
+- Move `mailers` test folders into `spec` directory.
+
+
 ### [v0.26 - 18/feb/19] > 5.11 > Ajax requests
 
 - Patch `profile.js` asset to enable turbolinks load.
