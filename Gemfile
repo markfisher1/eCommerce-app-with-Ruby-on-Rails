@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.5'
 # gem Jquery
 gem 'jquery-rails'
 
+gem 'rails-controller-testing'
+
 # gem bootstrap
 gem 'bootstrap', '~> 4.2.1'
 

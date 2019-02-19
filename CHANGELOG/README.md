@@ -1,6 +1,14 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.29 - 19/feb/19] > 6.3 > Functional tests
+
+- Install gem `rails-controller-testing`.
+- Patch `routes.rb` in order to accept exercise test.
+- Patch `spec/rails_helper` to configure devise > 4.11.
+- Add functional tests on `SimplePagesController` and `UsersController`.
+
+
 ### [v0.28 - 19/feb/19] > 6.2 > Rspec tests
 
 - Patch all `spec models` to perform validation tests.
