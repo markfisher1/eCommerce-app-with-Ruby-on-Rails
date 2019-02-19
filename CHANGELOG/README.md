@@ -1,7 +1,12 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
-### [v0.27 - 19/feb/19] > 6.1 > Rspec & File cleanup 
+### [v0.28 - 19/feb/19] > 6.2 > Rspec tests
+
+- Patch all `spec models` to perform validation tests.
+
+
+### [v0.27 - 19/feb/19] > 6.1 > Rspec & File cleanup
 
 - Install gem `Rspec`.
 - Add spec files for `comment`, `order`, `product` and `user` models.
