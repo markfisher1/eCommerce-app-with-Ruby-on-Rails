@@ -2,9 +2,13 @@ require "rails_helper"
 
 describe UsersController, type: :controller do
 
-  let(:userA) {User.create!(username: "testUserA", email: "testA@test.com", password: "123456")}
-  let(:userB) {User.create!(username: "testUserB", email: "testB@test.com", password: "123456")}
+  User.destroy_all # I was getting an error due to 'username & email taken' so i decided to truncate the test table before go
+  # not sure if it is correct but it works.
 
+  userA = FactoryBot.build(:user, email: "emailA@email.com", username: "userA")
+  userA.save # i need to save this one...
+  userB = FactoryBot.build(:user, email: "emailB@email.com", username: "userB")
+  userB.save # i need to save this one too...
 
   describe "GET #show" do
 

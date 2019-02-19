@@ -1,6 +1,13 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.30 - 19/feb/19] > 6.4 > Factory bot
+
+- Install & config gem `factory_bot_rails`.
+- Add `user_factory` to generate dummy user default used for testing.
+- Patch `users_controller_spec` to get data from factory instead of fixtures.
+
+
 ### [v0.29 - 19/feb/19] > 6.3 > Functional tests
 
 - Install gem `rails-controller-testing`.
