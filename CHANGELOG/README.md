@@ -1,7 +1,20 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
-### [v0.31 - 20/feb-19] > 6.5 > Payment forms with stripe
+### [v0.32 - 20/feb/19] > 6.6 > Payment controller
+
+- Add `orders.js` to handle JS frontend handling.
+- Add `payments` controller and helper.
+- Patch `productScripts.js` and `products` stylesheet to fix positioning bug on loading gif.
+- Patch `orders` controller to group similar products into same row.
+- Patch `orders` and `users` helper to handle new requests and remove logic from view.
+- Patch main `layout` to rename navigation homepage link.
+- Patch `orders index` view to fully integrate `stripe`.
+- Patch `products` views and partials to fully integrate functionality and value formatting.
+- Patch `user` partials to format values.
+- Patch `routes` to accept the new `post` request.
+
+### [v0.31 - 20/feb/19] > 6.5 > Payment forms with stripe
 
 - Install & config gem `stripe`.
 - Migrate DB to change dataTypes from `orders:total` and `product:price` to integer.

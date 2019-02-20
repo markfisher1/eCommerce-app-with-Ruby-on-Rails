@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<div id="orders" class="row justify-content-center m-0 p-0">
+<div id="orders" class="row justify-content-center m-0 p-0 pb-5">
   <% if @orders.length < 1 %> <!-- default view for empty cart -->
     <div class="col-12 m-0 ">
       <p>
@@ -26,10 +26,10 @@
 
         <tbody>
         <!-- loop to generate table elements and display cart content -->
-        <% @orders.all.each do |order| %>
+        <% @orders.each do |order| %>
           <tr>
             <td>
-              <%= order.product.name %>
+              <%= order.product.name %> (x <%= countRepeated(order) %>)
             </td>
 
             <td>
@@ -37,10 +37,25 @@
             </td>
 
             <td>
-              <%= form_for(:order, url: orders_destroy_path, method: :post) do |f| %>
-                <%= f.hidden_field(:order_id, :value => order.id) %>
-                <%= f.button '<i class="far fa-trash-alt"></i>'.html_safe, class: "btn btn-sm btn-outline-danger" %>
-              <% end %>
+              <div class="row m-0 p-0 justify-content-center">
+
+                <div class="col-auto m-0 p-0 px-1">
+                  <%= form_for(:order, url: orders_create_path, method: :post) do |f| %>
+                    <%= f.hidden_field(:product_id, :value => order.product.id) %>
+                    <%= f.button "<i class='fas fa-plus'></i>".html_safe, class: "btn btn-sm btn-outline-secondary btn-tooltip", title: "Duplicate item", data: {toggle: "tooltip", placement: "top"} %>
+                  <% end %>
+                </div>
+
+                <div class="col-auto m-0 p-0 px-1">
+                  <%= form_for(:order, url: orders_destroy_path, method: :post) do |f| %>
+                    <%= f.hidden_field(:order_id, :value => order.id) %>
+                    <%= f.button '<i class="far fa-trash-alt"></i>'.html_safe, class: "btn btn-sm btn-outline-danger btn-tooltip", title: "Remove item", data: {toggle: "tooltip", placement: "top"} %>
+                  <% end %>
+                </div>
+
+              </div>
+
+
               <!-- <a href="#" class="btn btn-sm btn-outline-danger">remove</a> -->
             </td>
           </tr>
@@ -51,20 +66,26 @@
     </div>
 
     <div class="col-12 m-0">
-      <div class="row m-0 p-0 justify-content-end">
+      <div class="row m-0 p-0 justify-content-center">
 
-        <div class="col-8 m-0 p-0">
+        <div class="col-6 m-0 p-0 text-right align-self-center">
           <strong>Total:</strong>&nbsp;<span class="dollar">€</span><%= getTotalOrderPrice(@orderTotal) %>
         </div>
 
-        <div class="col-2 m-0 p-0">
+        <div class="col-2 m-0 p-0 text-center align-self-center">
           <%= form_with(url: '/payments/create') do |f| %>
+
+            <% @orders.each do |order| %>
+              <%= f.hidden_field :order_ids, multiple: true, value: order.id %>
+            <% end %>
             <script
               src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-image="<%= asset_path('rails_icon.ico') %>"
               data-name="<%= File.basename(Rails.root.to_s) %>"
-              data-description=""
+              data-currency= "eur"
+              data-description="<%= getOrderDescription(@orders) %>"
+              data-label="Checkout"
               data-amount="<%= @orderTotal %>">
             </script>
           <% end %>

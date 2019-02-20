@@ -28,6 +28,7 @@ $(document).on("turbolinks:load", function(){
     ele.on("load", function (){
       // $(this).addClass("card-img-top");
       $(".loading_gif").fadeTo(700, 0, function(){});
+      $(".loading_gif").css("z-index", "-1");
       $(this).fadeTo(750, 1, function(){
 
       });

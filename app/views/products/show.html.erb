@@ -41,7 +41,7 @@
                 <%= @product.colour.capitalize %><br>
                 <br>
                 <strong>Price:</strong>
-                <span class="dollar">€</span><%= @product.price %><br>
+                <span class="dollar">€</span><%= getProductPrice(@product) %><br>
                 <br>
                 <strong>Product Rating:</strong>
                 <div class="rated" data-score="<%= @product.average_rating %>"></div>

@@ -22,3 +22,4 @@
 //= require products
 //= require notice
 //= require profile
+//= require orders

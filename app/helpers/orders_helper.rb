@@ -23,20 +23,38 @@ module OrdersHelper
   end
 
 
+  # format price individual item
   def getOrderPrice(order)
     if order.total > 0
+      order.total = order.total * countRepeated(order)
       order.total = order.total.to_f / 100.to_f
     else
       order.total = "0.00"
     end
   end
 
+  # format price total purchase
   def getTotalOrderPrice(value)
     if value > 0
       value.to_f / 100.to_f
     else
       "0.00"
     end
+  end
+
+  # generate description
+  def getOrderDescription(orders)
+    if orders.count == 1
+      "#{orders.count} item."
+    else
+      "#{orders.count} items."
+    end
+
+  end
+
+  # count number of similar products
+  def countRepeated(order)
+    Order.where("product_id = #{order.product_id} AND user_id = #{current_user.id} AND paid = 0").count
   end
 
 end
