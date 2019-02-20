@@ -54,11 +54,7 @@ class OrdersController < ApplicationController
 
   def index
     # displays all orders for current user that are UNPAID > like a basic cart system
-    if Order.includes(:product).where(user_id: current_user.id, paid: 0).count > 1
-      @orders = Order.includes(:product).where(user_id: current_user.id, paid: 0).group(:product_id)
-    else
-      @orders = Order.includes(:product).where(user_id: current_user.id, paid: 0)
-    end
+    @orders = Order.unscoped.includes(:product).where(user_id: current_user.id, paid: 0).group(:product_id)
 
     @orderTotal = Order.where(user_id: current_user.id, paid: 0).sum(:total)
   end
