@@ -75,8 +75,8 @@
         <div class="col-2 m-0 p-0 text-center align-self-center">
           <%= form_with(url: '/payments/create') do |f| %>
 
-            <% @ordersItems.each do |prod| %>
-              <%= f.hidden_field :order_ids, multiple: true, value: getOrderId(prod) %>
+            <% @ordersUnits.each do |order| %>
+              <%= f.hidden_field :order_ids, multiple: true, value: order.id %>
             <% end %>
             <script
               src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -94,5 +94,5 @@
       </div>
     </div>
   <% end %>
-  
+
 </div>

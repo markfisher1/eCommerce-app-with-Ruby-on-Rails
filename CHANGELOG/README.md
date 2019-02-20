@@ -3,9 +3,11 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.32 - 20/feb/19] > 6.6 > Payment controller
 
-#### [v0.32.2] > hotFix > Attempt to fix bug with `GROUP` with PostgresSQL IV
+#### [v0.32.5] > hotFix > Enable email receipts
 
-#### [v0.32.2] > hotFix > Attempt to fix bug with `GROUP` with PostgresSQL III
+#### [v0.32.4] > hotFix > Attempt to fix bug with `GROUP` with PostgresSQL IV
+
+#### [v0.32.3] > hotFix > Attempt to fix bug with `GROUP` with PostgresSQL III
 
 #### [v0.32.2] > hotFix > Attempt to fix bug with `GROUP` with PostgresSQL II
 

@@ -29,7 +29,8 @@ class PaymentsController < ApplicationController
         amount: @totalPrice,
         currency: "eur",
         source: token,
-        description: params[:stripeEmail]
+        description: params[:stripeEmail],
+        receipt_email: @user.email
       )
 
     if charge.paid
@@ -51,7 +52,9 @@ class PaymentsController < ApplicationController
 
       end
 
-      redirect_to orders_path, notice: "Thank you for the <span class='dollar'>€</span>#{@totalPrice}! Items will never arrive ahahaha."
+      # format price for notice
+      priceInEuros = @totalPrice.to_f / 100.to_f
+      redirect_to orders_path, notice: "Thank you for the <span class='dollar'>€</span>#{priceInEuros}! Items will never arrive ahahaha."
 
     end
 
