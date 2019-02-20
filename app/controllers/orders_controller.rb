@@ -41,7 +41,9 @@ class OrdersController < ApplicationController
             redirect_back fallback_location: products_path
           end
 
-          format.js
+          format.js do
+            flash[:alert] = "There was an error adding your order. Please try again"
+          end
 
 
         end
@@ -53,6 +55,7 @@ class OrdersController < ApplicationController
   def index
     # displays all orders for current user that are UNPAID > like a basic cart system
     @orders = Order.includes(:product).where(user_id: current_user.id, paid: 0)
+    @orderTotal = Order.where(user_id: current_user.id, paid: 0).sum(:total)
   end
 
   def show

@@ -1,5 +1,8 @@
 <% if @order.errors.empty? %>
-  alert('created')
+  $("#global-notice").stop();
+  $("#global-notice").css("opacity", 1);
+  $("#global-notice").show();
+  $("#global-notice").delay(2500).fadeOut(2500);
 <% else %>
   alert('not created')
 <% end %>

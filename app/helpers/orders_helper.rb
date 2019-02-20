@@ -22,4 +22,21 @@ module OrdersHelper
     end
   end
 
+
+  def getOrderPrice(order)
+    if order.total > 0
+      order.total = order.total.to_f / 100.to_f
+    else
+      order.total = "0.00"
+    end
+  end
+
+  def getTotalOrderPrice(value)
+    if value > 0
+      value.to_f / 100.to_f
+    else
+      "0.00"
+    end
+  end
+
 end

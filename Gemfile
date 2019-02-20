@@ -42,6 +42,8 @@ gem 'carrierwave-google-storage'
 gem 'google-api-client'
 gem 'mime-types'
 
+# payments stuff 
+gem "stripe"
 
 gem 'figaro'
 

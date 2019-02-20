@@ -20,14 +20,20 @@
             <%= product.description%>
           </p>
           <p>
-            <strong>Price: </strong>€ <%= product.price %>
+            <strong>Price: </strong>€ <%= getProductPrice(product) %>
           </p>
         </div><!-- /wrapper is here bc i know im gonna need it to style the text better -->
         <div class="col-12 p-0 text-right mt-2">
-          <%= form_for(:order, url: orders_create_path, method: :post, remote:true) do |f| %>
-            <%= f.hidden_field(:product_id, :value => product.id) %>
-            <%= f.button "add", class: "btn btn-outline-secondary" %>
+
+          <% if user_signed_in? %>
+            <%= form_for(:order, url: orders_create_path, method: :post, remote:true) do |f| %>
+              <%= f.hidden_field(:product_id, :value => product.id) %>
+              <%= f.button "add", class: "btn btn-outline-secondary" %>
+            <% end %>
+          <% else %>
+            <%= link_to "add", new_user_session_path, class: "btn btn-outline-secondary" %>
           <% end %>
+
         </div>
       </div>
     </div>

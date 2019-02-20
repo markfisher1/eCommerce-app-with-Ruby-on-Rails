@@ -1,6 +1,17 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.31 - 20/feb-19] > 6.5 > Payment forms with stripe
+
+- Install & config gem `stripe`.
+- Migrate DB to change dataTypes from `orders:total` and `product:price` to integer.
+- Add `order` & `product` helpers to format value output from cents to decimal euros.
+- Patch `seeds` to face the new integer dataTypes.
+- Patch needed views to use new helpers.
+- Patch `notice.js`, `orders/create.js` and `productScripts.js` to implement notices upon item added to cart.
+- Insert `pay with card` button on cart (orders) view.
+
+
 ### [v0.30 - 19/feb/19] > 6.4 > Factory bot
 
 - Install & config gem `factory_bot_rails`.

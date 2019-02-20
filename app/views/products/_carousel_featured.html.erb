@@ -51,18 +51,23 @@
               <!-- view col -->
               <div class="col-6 align-self-center">
                 <a href="/products/<%= prod.id %>" class="btn btn-outline-light">
-                  <i class="far fa-eye"></i> view
+                  <i class="far fa-eye"></i>&nbsp;view
                 </a>
               </div>
               <!-- /view col -->
 
               <!-- add 2 cart col -->
               <div class="col-6 align-self-center">
-                <a href="#" class="btn btn-outline-light"
-                  data-operation="add2cart"
-                  data-product_id="<%= prod.id %>">
-                  <i class="fas fa-cart-plus"></i> add
-                </a>
+
+                <% if user_signed_in? %>
+                  <%= form_for(:order, url: orders_create_path, method: :post, remote:true) do |f| %>
+                    <%= f.hidden_field(:product_id, :value => prod.id) %>
+                    <%= f.button "<i class='fas fa-cart-plus'></i>&nbsp;add".html_safe, class: "btn btn-outline-light" %>
+                  <% end %>
+                <% else %>
+                  <%= link_to "<i class='fas fa-cart-plus'></i>&nbsp;add".html_safe, new_user_session_path, class: "btn btn-outline-secondary" %>
+                <% end %>
+
               </div>
               <!-- /add 2 cart col -->
 

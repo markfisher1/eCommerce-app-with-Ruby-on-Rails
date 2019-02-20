@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<div id="orders" class="row justify-content-center">
+<div id="orders" class="row justify-content-center m-0 p-0">
   <% if @orders.length < 1 %> <!-- default view for empty cart -->
     <div class="col-12 m-0 ">
       <p>
@@ -33,7 +33,7 @@
             </td>
 
             <td>
-              <span class="dollar">€</span><%= order.total %>
+              <span class="dollar">€</span><%= getOrderPrice(order) %>
             </td>
 
             <td>
@@ -49,6 +49,33 @@
         </tbody>
       </table>
     </div>
+
+    <div class="col-12 m-0">
+      <div class="row m-0 p-0 justify-content-end">
+
+        <div class="col-8 m-0 p-0">
+          <strong>Total:</strong>&nbsp;<span class="dollar">€</span><%= getTotalOrderPrice(@orderTotal) %>
+        </div>
+
+        <div class="col-2 m-0 p-0">
+          <%= form_with(url: '/payments/create') do |f| %>
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-image="<%= asset_path('rails_icon.ico') %>"
+              data-name="<%= File.basename(Rails.root.to_s) %>"
+              data-description=""
+              data-amount="<%= @orderTotal %>">
+            </script>
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
   <% end %>
+
+
+
 
 </div>
