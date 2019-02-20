@@ -3,6 +3,10 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.32 - 20/feb/19] > 6.6 > Payment controller
 
+#### [v0.32.1] > hotFix > Attempt to fix bug with `GROUP` with PostgresSQL I
+
+#### [v0.32]
+
 - Add `orders.js` to handle JS frontend handling.
 - Add `payments` controller and helper.
 - Patch `productScripts.js` and `products` stylesheet to fix positioning bug on loading gif.
