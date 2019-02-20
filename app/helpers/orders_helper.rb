@@ -24,12 +24,12 @@ module OrdersHelper
 
 
   # format price individual item
-  def getOrderPrice(order)
-    if order.total > 0
-      order.total = order.total * countRepeated(order)
-      order.total = order.total.to_f / 100.to_f
+  def getOrderPrice(prod)
+    if prod.price > 0
+      prod.price = prod.price * countRepeated(prod)
+      prod.price = prod.price.to_f / 100.to_f
     else
-      order.total = "0.00"
+      prod.price = "0.00"
     end
   end
 
@@ -53,8 +53,13 @@ module OrdersHelper
   end
 
   # count number of similar products
-  def countRepeated(order)
-    Order.where("product_id = #{order.product_id} AND user_id = #{current_user.id} AND paid = 0").count
+  def countRepeated(prod)
+    Order.where("product_id = #{prod.id} AND user_id = #{current_user.id} AND paid = 0").count
+  end
+
+  # get order ID from product
+  def getOrderId(prod)
+    Order.where(product_id: prod.id, user_id: current_user.id, paid: 0).first.id
   end
 
 end
