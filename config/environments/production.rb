@@ -3,7 +3,7 @@ Rails.application.configure do
   # remove annoying .field_with_errors from my HTML markup!!!!!!
 
   # lets make the debugger level less filled
-  Rails.logger.level = 2
+  config.log_level = :warn
 
   ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
     html_tag.html_safe

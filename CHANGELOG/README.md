@@ -3,6 +3,10 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.33 - 21/feb/19] > 6.7 > ByeBug debugging
 
+#### [v0.33.1] > hotFix > Log level defenition on `production.rb` environment
+
+#### [v0.33]
+
 - Patch `orders` and `products` controllers to add debugging breakpoints.
 - Patch `production.rb` environment to minimise log level on production.
 
