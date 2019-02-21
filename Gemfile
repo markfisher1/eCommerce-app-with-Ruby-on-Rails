@@ -35,6 +35,9 @@ gem 'devise', '~> 4.2'
 # gem canCan
 gem 'cancancan', '~> 1.10'
 
+# SCURITY AUDIT
+gem "brakeman"
+
 #gem carrierwave
 gem 'carrierwave'
 gem 'carrierwave-google-storage'
@@ -42,7 +45,7 @@ gem 'carrierwave-google-storage'
 gem 'google-api-client'
 gem 'mime-types'
 
-# payments stuff 
+# payments stuff
 gem "stripe"
 
 gem 'figaro'

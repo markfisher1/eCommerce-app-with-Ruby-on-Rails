@@ -1,6 +1,12 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+#### [v0.34 - 21/feb/19] > 6.8 > Small fixes
+
+- Patch `productScripts` to remove code block that is not required anymore.
+- Patch `products` stylesheet and views to implement zoom directly on css for better performance with less resource usage.
+- Comment out `byebug` to avoid unnecessary stops while developing.
+
 ### [v0.33 - 21/feb/19] > 6.7 > ByeBug debugging
 
 #### [v0.33.2] > hotFix > Syntax error fix

@@ -55,6 +55,7 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    brakeman (4.4.0)
     builder (3.2.3)
     byebug (10.0.2)
     cancancan (1.17.0)
@@ -302,6 +303,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.2.1)
+  brakeman
   byebug
   cancancan (~> 1.10)
   carrierwave

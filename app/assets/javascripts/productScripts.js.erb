@@ -17,10 +17,7 @@ $(document).on("turbolinks:load", function(){
     $(canvasArray[i]).addClass("card-img-top");
     var imageSrc = $(canvasArray[i]).data("product-image");
 
-    // lets check for picture or distribute default avatar for product
-    if (imageSrc.length < 1){
-      imageSrc = $(canvasArray[i]).data("product-default-image");
-    }
+
     canvasArray[i].src = imageSrc
     var ele = $(canvasArray[i]);
 
@@ -29,9 +26,7 @@ $(document).on("turbolinks:load", function(){
       // $(this).addClass("card-img-top");
       $(".loading_gif").fadeTo(700, 0, function(){});
       $(".loading_gif").css("z-index", "-1");
-      $(this).fadeTo(750, 1, function(){
-
-      });
+      $(this).fadeTo(750, 1, function(){});
     })
 
   }

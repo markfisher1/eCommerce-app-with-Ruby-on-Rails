@@ -3,9 +3,9 @@ class OrdersController < ApplicationController
 
   def create
 
-    if Rails.env.development?
-      byebug
-    end
+    # if Rails.env.development?
+    #   byebug
+    # end
 
     # prepare vars for DB entry
     @userID = current_user.id
@@ -59,9 +59,9 @@ class OrdersController < ApplicationController
 
   def index
 
-    if Rails.env.development?
-      byebug
-    end 
+    # if Rails.env.development?
+    #   byebug
+    # end
 
     # displays all orders for current user that are UNPAID > like a basic cart system
     @orders = Order.where(user_id: current_user.id, paid: 0).group(:product_id).count

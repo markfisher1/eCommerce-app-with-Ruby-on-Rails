@@ -182,6 +182,25 @@
   z-index: 0;
 }
 
+.zoom{
+  transition: $transition_fast;
+  -webkit-transition: $transition_fast;
+}
+
+.card-image:hover{
+  .zoom{
+    position: absolute;
+    top: -15%;
+    left: 0;
+    transform: scale(0.8);
+
+  }
+}
+
+
+
+
+
 #product_single{
   // min-height: 90vh;
   padding: 0.2em;

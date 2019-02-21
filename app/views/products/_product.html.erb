@@ -9,7 +9,7 @@
       <div class="card-body row">
         <div class="card-image border rounded">
           <a href="<%= "#{products_path}/#{product.id}" %>">
-            <%= image_tag("load.gif", class: "load_image product_image", data:{type: "product_canvas", product_id: product.id, product_image: "#{asset_path(product.image)}", product_default_image: "#{asset_path("default_product.jpg")}"}, alt: "#{product.name} Image") %>
+            <%= image_tag("load.gif", class: "load_image product_image zoom", data:{type: "product_canvas", product_id: product.id, product_image: "#{asset_path(product.image)}", product_default_image: "#{asset_path("default_product.jpg")}"}, alt: "#{product.name} Image") %>
           </a>
           <%= image_tag("load.gif", id: "load_#{product.id}", class: "loading_gif", data:{type: "loading"}, alt: "#{product.name} is loading") %>
         </div>
