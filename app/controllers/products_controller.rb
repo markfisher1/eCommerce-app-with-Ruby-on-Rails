@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
 
-    byebug
+    if Rails.env.development? { byebug }
 
     if params[:q]
       search_term = params[:q]

@@ -9,11 +9,9 @@ class PaymentsController < ApplicationController
     # lets loop this and get the total ammount
     @totalPrice = 0
 
-    logger.debug "[START] >> LOOP ORDERS OBJECT TO CALCULATE TOTAL PRICE"
 
     @ordersObject.each do |order_id|
 
-      logger.debug "[LOOP RUN] >> LOOPING THROUGH #{order_id}"
 
       order = Order.find(order_id)
 
