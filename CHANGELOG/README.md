@@ -3,6 +3,8 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.33 - 21/feb/19] > 6.7 > ByeBug debugging
 
+#### [v0.33.2] > hotFix > Syntax error fix
+
 #### [v0.33.2] > hotFix > Conditional before `byebug` call to avoid NoMethod error
 
 #### [v0.33.1] > hotFix > Log level definition on `production.rb` environment
