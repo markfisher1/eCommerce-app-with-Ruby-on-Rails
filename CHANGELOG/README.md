@@ -1,6 +1,12 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.33 - 21/feb/19] > 6.7 > ByeBug debugging
+
+- Patch `orders` and `products` controllers to add debugging breakpoints.
+- Patch `production.rb` environment to minimise log level on production.
+
+
 ### [v0.32 - 20/feb/19] > 6.6 > Payment controller
 
 #### [v0.32.5] > hotFix > Enable email receipts

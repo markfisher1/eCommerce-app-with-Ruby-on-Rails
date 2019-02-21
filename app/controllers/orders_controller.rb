@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def create
+    byebug
     # prepare vars for DB entry
     @userID = current_user.id
     @productID = params[:order][:product_id]
@@ -53,6 +54,7 @@ class OrdersController < ApplicationController
   end
 
   def index
+    byebug
     # displays all orders for current user that are UNPAID > like a basic cart system
     @orders = Order.where(user_id: current_user.id, paid: 0).group(:product_id).count
     @ordersUnits = Order.where(user_id: current_user.id, paid: 0)
