@@ -27,7 +27,7 @@ gem 'jquery-rails'
 gem 'rails-controller-testing'
 
 # gem bootstrap
-gem 'bootstrap', '~> 4.2.1'
+gem 'bootstrap'
 
 # gem devise
 gem 'devise', '~> 4.2'

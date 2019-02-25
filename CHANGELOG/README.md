@@ -1,6 +1,8 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.35 - 25/feb/19] > Update gems
+
 #### [v0.34 - 21/feb/19] > 6.8 > Small fixes
 
 - Patch `productScripts` to remove code block that is not required anymore.
