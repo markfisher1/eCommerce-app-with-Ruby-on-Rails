@@ -13,7 +13,7 @@ class User < ApplicationRecord
   # Only allow letter, number, underscore and punctuation.
   # we need to avoid that users use email as username.
   # otherwise it will find 2 results for the same user.
-  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
+  validates_format_of :username, with: /\A[a-zA-Z0-9_\.]*\z/, :multiline => true
 
 
   # send email after signup

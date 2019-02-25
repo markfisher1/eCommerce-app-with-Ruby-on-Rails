@@ -1,6 +1,10 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.36 - 25/feb/19] > Brakeman cleanup
+
+- Patch `user` model to fix the regex used to validate username.
+
 ### [v0.35 - 25/feb/19] > Update gems
 
 #### [v0.34 - 21/feb/19] > 6.8 > Small fixes
