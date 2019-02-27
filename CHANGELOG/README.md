@@ -1,6 +1,10 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+### [v0.37 - 27/feb/19] > 6.11 > Caching
+
+- Install & configure gem `dalli`.
+
 ### [v0.36 - 25/feb/19] > Brakeman cleanup
 
 - Patch `user` model to fix the regex used to validate username.
