@@ -3,11 +3,15 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.37 - 27/feb/19] > 6.11 > Caching
 
+#### [v0.37.2 - 27/feb/19] > HotFix > Add `gem dalli` to the gemfile
+
+- Update bundle.
+
 #### [v0.37.1 - 27/feb/19 ] > HotFix > Fix `cache_store` location
 
 #### [v0.37]
 
-- Install & configure gem `dalli`.
+- Install & configure gem `dalli`. (by mistake only on localhost)
 
 ### [v0.36 - 25/feb/19] > Brakeman cleanup
 
