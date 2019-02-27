@@ -3,6 +3,10 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.37 - 27/feb/19] > 6.11 > Caching
 
+#### [v0.37.1 - 27/feb/19 ] > HotFix > Fix `cache_store` location
+
+#### [v0.37]
+
 - Install & configure gem `dalli`.
 
 ### [v0.36 - 25/feb/19] > Brakeman cleanup
