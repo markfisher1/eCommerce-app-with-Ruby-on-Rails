@@ -36,24 +36,7 @@
 
 <section class="row mt-2 m-0 p-0" id="product_section">
 
-  <% if $redis.exists("product-list-cache") %>
-
-    <%= $redis.get("product-list-cache").html_safe %>
-
-    <% logger.debug("[DOBBY] > CACHE OK > PRODUCTS LOADED") %>
-    <% logger.debug("[DOBBY] > TTL REMAINING: #{$redis.ttl("product-list-cache")}") %>
-
-  <% else %>
-
-    <% content = render @products %>
-    <% $redis.set("product-list-cache", content) %>
-    <% $redis.expire("product-list-cache", 300) %>
-    <%= $redis.get("product-list-cache").html_safe %>
-
-    <% logger.debug("[DOBBY] > CACHE NOT OK > PRODUCTS CACHED") %>
-    <% logger.debug("[DOBBY] > TTL REMAINING: #{$redis.ttl("product-list-cache")}") %>
-
-  <% end %>
+  <%= getProdCache.html_safe %>
 
 </section>
 
