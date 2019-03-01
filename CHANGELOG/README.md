@@ -4,6 +4,10 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.38 - 01/mar/19] > 6.12 > Redis caching & deeper implementation
 
+#### [v0.38.1 - 01/mar/19] > HotFix > Redis connection params within initializer for production environment
+
+#### [v0.38]
+
 - Patch `products` controller and partials to remove old cache system.
 - Patch `products` index view to implement temporary cache system. Code will be moved to appropriate helper.
 - Install and configure gem `redis`.
