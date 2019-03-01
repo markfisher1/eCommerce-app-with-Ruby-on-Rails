@@ -1,4 +1,21 @@
-<%= render "carousel_featured" %>
+<% if $redis.exists("product-featured-cache") %>
+
+  <%= $redis.get("product-featured-cache").html_safe %>
+
+  <% logger.debug("[DOBBY] > CACHE OK > CAROUSEL LOADED") %>
+  <% logger.debug("[DOBBY] > TTL REMAINING: #{$redis.ttl("product-list-cache")}") %>
+
+<% else %>
+
+  <% content = render "carousel_featured" %>
+  <% $redis.set("product-featured-cache", content) %>
+  <% $redis.expire("product-featured-cache", 300) %>
+  <%= $redis.get("product-featured-cache").html_safe %>
+
+  <% logger.debug("[DOBBY] > CACHE NOT OK > CAROUSEL CACHED") %>
+  <% logger.debug("[DOBBY] > TTL REMAINING: #{$redis.ttl("product-featured-cache")}") %>
+
+<% end %>
 
 <div class="row m-0 p-0 mt-5">
   <div class="col-6 m-0 p-0">
@@ -18,7 +35,26 @@
 </div>
 
 <section class="row mt-2 m-0 p-0" id="product_section">
-  <%= render @products %>
+
+  <% if $redis.exists("product-list-cache") %>
+
+    <%= $redis.get("product-list-cache").html_safe %>
+
+    <% logger.debug("[DOBBY] > CACHE OK > PRODUCTS LOADED") %>
+    <% logger.debug("[DOBBY] > TTL REMAINING: #{$redis.ttl("product-list-cache")}") %>
+
+  <% else %>
+
+    <% content = render @products %>
+    <% $redis.set("product-list-cache", content) %>
+    <% $redis.expire("product-list-cache", 300) %>
+    <%= $redis.get("product-list-cache").html_safe %>
+
+    <% logger.debug("[DOBBY] > CACHE NOT OK > PRODUCTS CACHED") %>
+    <% logger.debug("[DOBBY] > TTL REMAINING: #{$redis.ttl("product-list-cache")}") %>
+
+  <% end %>
+
 </section>
 
 

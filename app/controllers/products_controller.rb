@@ -6,18 +6,21 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
 
-    # if Rails.env.development?
-    #   byebug
-    # end
-
     if params[:q]
+      # we got a search query here so we display the stuff presented according to query.
+      # lets leave cache out for now
+
       search_term = params[:q]
       @products = Product.search(search_term)
     else
+
       @products = Product.all
+      
     end
 
-    @featured_products = Product.limit(5).order("id desc")
+
+      @featured_products = Product.limit(5).order("id desc")
+
 
   end
 
@@ -25,7 +28,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     # lets get product reviews stuff, shall we?
-    # @comments = @product.comments.order("created_at DESC")
+
+    # Not applying cache has we have good pagination.
     @comments = @product.comments.paginate(page: params[:page], per_page: 2).order("created_at DESC")
 
   end

@@ -1,6 +1,14 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+
+### [v0.38 - 01/mar/19] > 6.12 > Redis caching & deeper implementation
+
+- Patch `products` controller and partials to remove old cache system.
+- Patch `products` index view to implement temporary cache system. Code will be moved to appropriate helper.
+- Install and configure gem `redis`.
+- Patch logger level to `debug` while on development.
+
 ### [v0.37 - 27/feb/19] > 6.11 > Caching
 
 #### [v0.37.2 - 27/feb/19] > HotFix > Add `gem dalli` to the gemfile

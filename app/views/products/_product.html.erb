@@ -1,44 +1,38 @@
-<% cache product do %>
-<% Rails.cache.write('product', product) %>
+<div id="product-card-<%= product.id %>" class="col-6 col-md-4 m-0 p-1 p-md-2 col-lg-3 mt-2">
+  <div class="card product_list">
+    <div class="card-title border-bottom">
+      ID:<%= product.id %> (images are now links)
+    </div>
 
-<% product = Rails.cache.read('product') %>
-  <div id="product-card-<%= product.id %>" class="col-6 col-md-4 m-0 p-1 p-md-2 col-lg-3 mt-2">
-
-    <div class="card product_list">
-      <div class="card-title border-bottom">
-        ID:<%= product.id %> (images are now links)
+    <div class="card-body row">
+      <div class="card-image border rounded">
+        <a href="<%= "#{products_path}/#{product.id}" %>">
+          <%= image_tag("load.gif", class: "load_image product_image zoom", data:{type: "product_canvas", product_id: product.id, product_image: "#{asset_path(product.image)}", product_default_image: "#{asset_path("default_product.jpg")}"}, alt: "#{product.name} Image") %>
+        </a>
+        <%= image_tag("load.gif", id: "load_#{product.id}", class: "loading_gif", data:{type: "loading"}, alt: "#{product.name} is loading") %>
       </div>
+      <div class="col-12 p-0"> <!-- wrapper is here bc i know im gonna need it to style the text better -->
+        <h5 class="text-truncate"><%= product.name %></h5>
+        <p class="card-text">
+          <strong>Desc:</strong><br>
+          <%= product.description%>
+        </p>
+        <p>
+          <strong>Price: </strong>€ <%= getProductPrice(product) %>
+        </p>
+      </div><!-- /wrapper is here bc i know im gonna need it to style the text better -->
+      <div class="col-12 p-0 text-right mt-2">
 
-      <div class="card-body row">
-        <div class="card-image border rounded">
-          <a href="<%= "#{products_path}/#{product.id}" %>">
-            <%= image_tag("load.gif", class: "load_image product_image zoom", data:{type: "product_canvas", product_id: product.id, product_image: "#{asset_path(product.image)}", product_default_image: "#{asset_path("default_product.jpg")}"}, alt: "#{product.name} Image") %>
-          </a>
-          <%= image_tag("load.gif", id: "load_#{product.id}", class: "loading_gif", data:{type: "loading"}, alt: "#{product.name} is loading") %>
-        </div>
-        <div class="col-12 p-0"> <!-- wrapper is here bc i know im gonna need it to style the text better -->
-          <h5 class="text-truncate"><%= product.name %></h5>
-          <p class="card-text">
-            <strong>Desc:</strong><br>
-            <%= product.description%>
-          </p>
-          <p>
-            <strong>Price: </strong>€ <%= getProductPrice(product) %>
-          </p>
-        </div><!-- /wrapper is here bc i know im gonna need it to style the text better -->
-        <div class="col-12 p-0 text-right mt-2">
-
-          <% if user_signed_in? %>
-            <%= form_for(:order, url: orders_create_path, method: :post, remote:true) do |f| %>
-              <%= f.hidden_field(:product_id, :value => product.id) %>
-              <%= f.button "<i class='fas fa-cart-plus'></i>&nbsp;add".html_safe, class: "btn btn-sm btn-outline-secondary" %>
-            <% end %>
-          <% else %>
-            <%= link_to "<i class='fas fa-cart-plus'></i>&nbsp;add".html_safe, new_user_session_path, class: "btn btn-sm btn-outline-secondary" %>
+        <% if user_signed_in? %>
+          <%= form_for(:order, url: orders_create_path, method: :post, remote:true) do |f| %>
+            <%= f.hidden_field(:product_id, :value => product.id) %>
+            <%= f.button "<i class='fas fa-cart-plus'></i>&nbsp;add".html_safe, class: "btn btn-sm btn-outline-secondary" %>
           <% end %>
+        <% else %>
+          <%= link_to "<i class='fas fa-cart-plus'></i>&nbsp;add".html_safe, new_user_session_path, class: "btn btn-sm btn-outline-secondary" %>
+        <% end %>
 
-        </div>
       </div>
     </div>
   </div>
-  <% end %>
+</div>
