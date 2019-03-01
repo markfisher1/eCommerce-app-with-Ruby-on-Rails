@@ -4,6 +4,8 @@ For better tutoring all significant changes will be kept under this log.
 
 ### [v0.38 - 01/mar/19] > 6.12 > Redis caching & deeper implementation
 
+#### [v0.38.3 - 01/mar/19] > HotFix > Add `*.rdb` files to .gitignore
+
 #### [v0.38.2 - 01/mar/19] > HotFix > Attempt to reduce memory usage from redis on heroku
 
 #### [v0.38.1 - 01/mar/19] > HotFix > Redis connection params within initializer for production environment
