@@ -10,6 +10,15 @@ class CommentsController < ApplicationController
 
       if @comment.save
 
+        if @comment.user.username.blank?
+          username = "anonym"
+        end
+        # Broadcast to channel
+        ActionCable.server.broadcast "product_channel",
+            comment: @comment.body,
+            given_rating: @comment.rating,
+            user: @comment.user.username 
+
         # save was OK
         format.html{
           redirect_to @product, notice: "Your review has been added to #{@product.name}."

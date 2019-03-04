@@ -1,6 +1,12 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+#### [v0.39 - 04/mar/19] > 6.13 > Websockets & Live update 
+
+- Integrate new channel `product_channel`.
+- Patch `comments controller` to format the new action & data.
+- Patch `product view` to display the live DOM interactions.
+- Configure `cable`, `environments` and `routes`.
 
 ### [v0.38 - 01/mar/19] > 6.12 > Redis caching & deeper implementation
 

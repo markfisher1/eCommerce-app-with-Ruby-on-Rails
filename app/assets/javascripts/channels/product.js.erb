@@ -1,0 +1,28 @@
+App.product = App.cable.subscriptions.create("ProductChannel", {
+  connected: function() {
+    // Called when the subscription is ready for use on the server
+  },
+
+  disconnected: function() {
+    // Called when the subscription has been terminated by the server
+  },
+
+  received: function(data) {
+    // Called when there's incoming data on the websocket for this channel
+    // RATY STUFF
+
+    // END OF RATY STUFF
+    $(".info-popout").html("<strong>New comment by:</strong> "+ data.user +"<br><i>" + data.comment + "</i><br><strong>Given Rating:</strong><br>" + "<span class='rated' data-score='"+ data.given_rating +"'></span>");
+    $(".info-popout").show().delay(2500).fadeOut(2500);
+    $('.rated').raty({
+      starHalf: '<%= asset_path 'star-half.png' %>',
+      starOff: '<%= asset_path 'star-off.png' %>',
+      starOn: '<%= asset_path 'star-on.png' %>',
+      readOnly: true,
+      score: function() {
+        return $(this).attr('data-score');
+      }
+    });
+
+  }
+});

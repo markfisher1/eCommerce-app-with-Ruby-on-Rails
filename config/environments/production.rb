@@ -109,4 +109,7 @@ Rails.application.configure do
 
   # define production host to ensure correct linking.
   config.action_mailer.default_url_options = { host: 'https://railsapp01.herokuapp.com/' }
+
+  config.web_socket_server_url = "wss://railsapp01.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://railsapp01.herokuapp.com', 'http://your-app-name.herokuapp.com']
 end
