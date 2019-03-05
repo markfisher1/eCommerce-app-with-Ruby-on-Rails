@@ -12,7 +12,9 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
     // RATY STUFF
 
     // END OF RATY STUFF
-    $(".info-popout").html("<strong>New comment by:</strong> "+ data.user +"<br><i>" + data.comment + "</i><br><strong>Given Rating:</strong><br>" + "<span class='rated' data-score='"+ data.given_rating +"'></span>");
+    // $(".info-popout").html("<strong>New comment by:</strong> "+ data.user +"<br><i>" + data.comment + "</i><br><strong>Given Rating:</strong><br>" + "<span class='rated' data-score='"+ data.given_rating +"'></span>");
+    $(".info-popout").html(data.comment);
+    // $(".rated").data("data-score", data.given_rating);
     $(".info-popout").show().delay(2500).fadeOut(2500);
     $('.rated').raty({
       starHalf: '<%= asset_path 'star-half.png' %>',
@@ -24,5 +26,15 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
       }
     });
 
+  },
+
+  listen_to_comments: function(){
+    return this.perform('listen', {
+      product_id: $("#product-square").data("product")
+    });
   }
+});
+
+$(document).on('turbolinks:load', function() {
+  App.product.listen_to_comments();
 });

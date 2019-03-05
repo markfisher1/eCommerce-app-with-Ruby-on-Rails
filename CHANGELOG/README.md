@@ -1,7 +1,19 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
-#### [v0.39 - 04/mar/19] > 6.13 > Websockets & Live update 
+#### [v.40 - 05/mar/19] > 6.14 > Active Jobs
+
+- Patch channel asset `product.js` to implement active job listener on page load.
+- Patch channel `connection.rb` to authenticate users before enabling listener.
+- Patch `product_channel` to stream data only within product ID channel.
+- Patch `comment` controller to comment out previous approach.
+- Add `comment_update` job to handle comments async.
+- Patch `comment` model to enable Job has handler.
+- Patch `product show` view to face the new user authentication used.
+- Add `comment_update_...` spec.
+- Delete unused `dump.rb` and ignore from future commits.
+
+#### [v0.39 - 04/mar/19] > 6.13 > Websockets & Live update
 
 - Integrate new channel `product_channel`.
 - Patch `comments controller` to format the new action & data.

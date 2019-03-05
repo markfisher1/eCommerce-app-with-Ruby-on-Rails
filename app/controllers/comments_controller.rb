@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params)
     @comment.user = current_user
+    @user = current_user
 
     respond_to do |format|
 
@@ -14,10 +15,17 @@ class CommentsController < ApplicationController
           username = "anonym"
         end
         # Broadcast to channel
-        ActionCable.server.broadcast "product_channel",
-            comment: @comment.body,
-            given_rating: @comment.rating,
-            user: @comment.user.username 
+        # ActionCable.server.broadcast "product_channel",
+        #     comment: @comment.body,
+        #     given_rating: @comment.rating,
+        #     user: @comment.user.username
+
+        # ProductChannel.broadcast_to @product.id,
+        #       comment: CommentsController.render(partial: "comments/comment",
+        #             locals: {comment: @comment, current_user: current_user}),
+        #             origin: "cable",
+        #             given_rating: @comment.rating,
+        #             user: @comment.user.username
 
         # save was OK
         format.html{

@@ -11,4 +11,7 @@ class Comment < ApplicationRecord
   validates :user, presence: true
   validates :product, presence: true
   validates :rating, numericality: {only_integer: true}
+
+  # active job trigger after commit 
+  after_create_commit { CommentUpdateJob.perform_later(self, self.user) }
 end
