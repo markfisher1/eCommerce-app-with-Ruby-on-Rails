@@ -34,9 +34,9 @@ class ApplicationController < ActionController::Base
     # to fill in data
 
     # lets get user
-    user =  User.find(current_user.id)
+    user =  resource
 
-    if user.first_name == nil || user.last_name == nil
+    if user.first_name.blank? || user.last_name.blank?
       # user has at least 1 empty field from naming paramters
       # set notice
       flash[:notice] = "
@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to main_app.root_url, alert: exception.message
+    redirect_to root_url, alert: exception.message
   end
 
 end

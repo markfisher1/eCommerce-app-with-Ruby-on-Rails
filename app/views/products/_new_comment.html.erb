@@ -4,6 +4,14 @@
     <div class="col m-0 p-0">
       <h4>Add review</h4>
 
+      <div id="comment_sent" class="row m-0 p-0 fade">
+        <div class="col-12 m-0 p-0 alert alert-success">
+          <p class="pl-3 m-0 p-2 text-center">
+            Thank you for your review!
+          </p>
+        </div>
+      </div>
+
       <%= form_for([@product, @product.comments.build], remote: true) do |form| %>
 
         <div class="form-group">

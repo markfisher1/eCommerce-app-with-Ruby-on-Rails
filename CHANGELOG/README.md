@@ -1,6 +1,15 @@
 # Changelog  
 For better tutoring all significant changes will be kept under this log.
 
+#### [v.41 - 11/mar/19] > 6.15 > Consumer WebApp
+
+- Patch `application` controller to remove redundant method from url path.
+- Patch `comments` controller to increase paramter validation security.
+- Patch `users` controller to allow admin moderation over users.
+- Patch Ajax response over `comments` controller to remove "new comment box" after submission.
+- Patch `users` views to display complete user list to admin.
+- Patch `assets` initializer to remove configuration error from assets vendor.
+
 #### [v.40 - 05/mar/19] > 6.14 > Active Jobs
 
 - Patch channel asset `product.js` to implement active job listener on page load.

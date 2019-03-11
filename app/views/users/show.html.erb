@@ -35,6 +35,10 @@
               class: "btn btn-sm btn-outline-secondary shadow-sm",
               id: "user-button-settings"
               %>
+        <% if current_user&.admin? %>
+          <br>
+          <%= link_to "Admin edit", edit_user_path(params[:id]), class: "btn btn-sm btn-outline-danger" %>
+        <% end %>
       </div>
       <!-- /link to settings -->
 

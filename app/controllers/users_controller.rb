@@ -6,8 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     # admin validation comes here
-    flash[:alert] = "You have no permission to view the requested page."
-    redirect_to root_path
+    adminPerms
   end
 
   # GET /users/1
@@ -56,8 +55,8 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     # admin validation comes here
-    flash[:alert] = "You have no permission to view the requested page."
-    redirect_to root_path
+    adminPerms
+
   end
 
   # POST /users
@@ -108,9 +107,14 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :username)
+      params.require(:user).permit(:first_name, :last_name, :username, :email, :street_name, :zipcode, :house_number, :city, :country)
     end
 
-    protected
+    def adminPerms
+      if !current_user&.admin?
+        flash[:alert] = "You have no permission to view the requested page."
+        redirect_to root_path
+      end
+    end
 
 end

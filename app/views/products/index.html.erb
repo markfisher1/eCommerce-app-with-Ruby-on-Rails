@@ -26,7 +26,6 @@
     <div class="row m-0 p-0 justify-content-end">
       <%= render "search" %>
     </div>
-
   </div>
 
   <div class="col-12 m-0 p-0">
@@ -34,14 +33,30 @@
   </div>
 </div>
 
-<section class="row mt-2 m-0 p-0" id="product_section">
+<% if current_user && current_user.admin? %>
+  <section class="row m-0 p-0 px-5 py-3 alert alert-warning">
+
+    <div class="col-12 m-0 p-0">
+      <h3>Admin panel</h3>
+
+      <div class="row m-0 p-0">
+
+        <div class="col-auto m-0 p-0">
+          <%= link_to "NEW PRODUCT", new_product_path, class: "btn btn-success" %>
+        </div>
+
+        <div class="col-auto m-0 mx-2 p-0">
+          <%= link_to "VIEW USERS", users_path, class: "btn btn-success" %>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+<% end %>
+
+<section class="row mt-2 m-0 p-0 pb-5" id="product_section">
 
   <%= getProdCache.html_safe %>
 
 </section>
-
-
-<br>
-
-<%= link_to 'New Product', new_product_path, class: "btn btn-success" %>
-<a href="/" class="btn btn-danger">Exit to HomePage</a>
