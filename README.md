@@ -1,4 +1,4 @@
-# README
+## README
 
 eCommerce shop for tutoring purposes.  
 Ruby on Rails, jQuery, Bootstrap, HTML5 & CSS
